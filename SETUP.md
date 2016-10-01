@@ -4,4 +4,5 @@
 - brew install neovim/neovim/neovim
 
 ### iTerm
-- Set Profiles>Terminal>Report Terminal Type: xterm-256color
+- Profiles>Terminal>Report Terminal Type: xterm-256color
+- Advanced > Terminal windows resize smootly: Yes
