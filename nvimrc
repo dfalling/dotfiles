@@ -70,7 +70,7 @@ set expandtab
 set autoindent
 
 " clipboard
-set clipboard=unnamed
+set clipboard+=unnamedplus
 
 " backspace
 set backspace=indent,eol,start
@@ -122,19 +122,6 @@ function! s:my_cr_function()
 endfunction
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-
-" system clipboard
-function! ClipboardYank()
-  call system('pbcopy', @@)
-endfunction
-function! ClipboardPaste()
-  let @@ = system('pbpaste')
-endfunction
-
-vnoremap <silent> y y:call ClipboardYank()<cr>
-vnoremap <silent> d d:call ClipboardYank()<cr>
-nnoremap <silent> p :call ClipboardPaste()<cr>p
-
 " relative line numbers
 :set number
 :set rnu
@@ -148,6 +135,7 @@ function! NumberToggle()
   endif
 endfunc
 
+" toggle relative line numbers
 nnoremap <C-l> :call NumberToggle()<cr>
 
 " search
@@ -179,3 +167,6 @@ xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
 " nerdcommenter
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
+
+" map space to :
+noremap <space> :
