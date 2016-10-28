@@ -163,6 +163,8 @@ xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
 " highlight current line
 :set cursorline
 
+" highlight current column
+:set cursorcolumn
 
 " nerdcommenter
 " Add spaces after comment delimiters by default
@@ -170,3 +172,6 @@ let g:NERDSpaceDelims = 1
 
 " map space to :
 noremap <space> :
+
+" jk for ESC
+:imap jk <Esc>
