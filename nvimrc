@@ -3,8 +3,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/syntastic'
 " multiple cursors w/ C-n
 Plug 'terryma/vim-multiple-cursors'
-" fuzzy finder w/ C-p
-Plug 'kien/ctrlp.vim'
 " status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -37,6 +35,9 @@ Plug 'rking/ag.vim'
 Plug 'elixir-lang/vim-elixir'
 " elm support
 Plug 'lambdatoast/elm.vim'
+" fuzyy finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
@@ -44,7 +45,6 @@ call plug#end()
 filetype plugin indent on
 
 syntax on
-set background=dark
 colorscheme onedark
 
 set ruler
@@ -79,9 +79,9 @@ set backspace=indent,eol,start
  set swapfile
  set dir=~/.tmp
 
-" switch ctrlp to using git ignore
-" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" fuzzy finder config
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+nnoremap <C-p> :FZF<CR>
 
 " airline
 let g:airline_theme='laederon'
