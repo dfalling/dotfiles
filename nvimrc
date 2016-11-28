@@ -38,6 +38,8 @@ Plug 'lambdatoast/elm.vim'
 " fuzyy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" JSON tools
+Plug 'tpope/vim-jdaddy'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
@@ -175,3 +177,6 @@ noremap <space> :
 
 " jk for ESC
 :imap jk <Esc>
+
+" make the line numbers not invisible (colors at https://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg)
+:highlight LineNr ctermfg=243
