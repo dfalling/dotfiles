@@ -13,7 +13,8 @@ alias vim=nvim
 source $ZSH/oh-my-zsh.sh
 
 # zplug
-source ~/Dropbox/Env/.zplug/init.zsh
+ZPLUG_HOME="$( brew --prefix )"/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 # Syntax highlighting bundle.
 zplug "zsh-users/zsh-syntax-highlighting"
@@ -30,7 +31,7 @@ if ! zplug check --verbose; then
 fi
 
 # Then, source plugins and add commands to $PATH
-zplug load
+zplug load > /dev/null
 
 alias blink-red="blink1-tool --rgb FF0000 --blink 3"
 alias blink-green="blink1-tool --rgb 00FF00 --blink 3"
