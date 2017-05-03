@@ -25,3 +25,5 @@
 [core]
 	excludesfile = /Users/dfalling/.gitignore
 	editor = nvim
+[url "https://"]
+	insteadOf = git://
