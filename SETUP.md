@@ -8,3 +8,6 @@
 ### iTerm
 - Profiles>Terminal>Report Terminal Type: xterm-256color
 - Advanced > Terminal windows resize smoothly: Yes
+
+### Manual
+- scm breeze: `https://github.com/scmbreeze/scm_breeze#installation`
