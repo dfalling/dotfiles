@@ -33,6 +33,7 @@ Plug 'ap/vim-css-color'
 Plug 'rking/ag.vim'
 " elixir support
 Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 " elm support
 Plug 'lambdatoast/elm.vim'
 " fuzyy finder
