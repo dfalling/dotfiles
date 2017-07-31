@@ -11,3 +11,5 @@
 
 ### Manual
 - scm breeze: `https://github.com/scmbreeze/scm_breeze#installation`
+- Iosevka font: `https://github.com/be5invis/Iosevka`
+- Inconsolata font: `http://levien.com/type/myfonts/inconsolata.html`
