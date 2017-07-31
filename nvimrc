@@ -159,10 +159,12 @@ function! VisualFindAndReplaceWithSelection() range
   :'<,'>OverCommandLine s/
 endfunction
 
-
+" visual search
 nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
 xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
 
+" make alternative buffer more accessible
+noremap <Leader>, <C-^>
 " highlight current line
 :set cursorline
 
