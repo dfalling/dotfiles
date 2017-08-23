@@ -3,6 +3,9 @@ KEYTIMEOUT=1
 
 HYPHEN_INSENSITIVE="true"
 
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/dfalling/.oh-my-zsh
+
 # currently overridden by antigen
 ZSH_THEME="gentoo"
 
@@ -44,3 +47,7 @@ alias notify="success || fail"
 
 # enable vim mode for zsh (hit ESC to switch to normal mode)
 bindkey -v
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -s "/Users/dfalling/.scm_breeze/scm_breeze.sh" ] && source "/Users/dfalling/.scm_breeze/scm_breeze.sh"
