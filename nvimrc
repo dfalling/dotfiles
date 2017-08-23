@@ -30,7 +30,7 @@ Plug 'osyo-manga/vim-over'
 " color css colors in text
 Plug 'ap/vim-css-color'
 " silver searcher
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 " elixir support
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
@@ -72,6 +72,9 @@ set shiftwidth=2
 set expandtab
 set autoindent
 
+" enable mouse
+set mouse=a
+
 " clipboard
 set clipboard+=unnamedplus
 
@@ -84,7 +87,17 @@ set backspace=indent,eol,start
 
 " fuzzy finder config
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
-nnoremap <C-p> :FZF<CR>
+" nnoremap <C-p> :FZF<CR>
+" switching to GFiles until I can find out a better workaround for ag ignoring
+" parent .gitignore files
+nnoremap <C-p> :GFiles<CR>
+
+" silver searcher
+let g:ackprg = 'ag --vimgrep --smart-case'                                                   
+cnoreabbrev ag Ack                                                                           
+cnoreabbrev aG Ack                                                                           
+cnoreabbrev Ag Ack                                                                           
+cnoreabbrev AG Ack 
 
 " airline
 let g:airline_theme='laederon'
