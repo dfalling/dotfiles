@@ -3,13 +3,21 @@
 - brew install reattach-to-user-namespace
 - brew install neovim/neovim/neovim
 - brew install zplug
-- tmux plugin manager: `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+- brew install python3
+- brew install the_silver_searcher
 
 ### iTerm
 - Profiles>Terminal>Report Terminal Type: xterm-256color
-- Advanced > Terminal windows resize smoothly: Yes
+- Profiles>Window>Style: No Title Bar
+- Advanced>Terminal windows resize smoothly: Yes
 
 ### Manual
 - scm breeze: `https://github.com/scmbreeze/scm_breeze#installation`
-- Iosevka font: `https://github.com/be5invis/Iosevka`
 - Inconsolata font: `http://levien.com/type/myfonts/inconsolata.html`
+- oh-my-zsh: `https://github.com/robbyrussell/oh-my-zsh`
+
+### Neovim
+- Add `source ~/.cfg/nvimrc` to `~/.config/nvim/init.vim`
+
+### Config files
+- symlink gitconfig, gitignore, tmux.conf
