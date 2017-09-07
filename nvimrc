@@ -29,13 +29,13 @@ Plug 'tpope/vim-vinegar'
 Plug 'osyo-manga/vim-over'
 " color css colors in text
 Plug 'ap/vim-css-color'
-" silver searcher
-Plug 'mileszs/ack.vim'
 " elixir support
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 " elm support
 Plug 'lambdatoast/elm.vim'
+" React support
+Plug 'pangloss/vim-javascript'
 " fuzyy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -62,9 +62,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=1
-" disable syntax checking
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['javascript'],'passive_filetypes': [] }
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
 " indentation
 set tabstop=2
@@ -86,18 +85,16 @@ set backspace=indent,eol,start
  set dir=~/.tmp
 
 " fuzzy finder config
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
-" nnoremap <C-p> :FZF<CR>
-" switching to GFiles until I can find out a better workaround for ag ignoring
-" parent .gitignore files
 nnoremap <C-p> :GFiles<CR>
 
-" silver searcher
-let g:ackprg = 'ag --vimgrep --smart-case'                                                   
-cnoreabbrev ag Ack                                                                           
-cnoreabbrev aG Ack                                                                           
-cnoreabbrev Ag Ack                                                                           
-cnoreabbrev AG Ack 
+" add Rg ripgrep command
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
 
 " airline
 let g:airline_theme='laederon'
@@ -175,6 +172,14 @@ endfunction
 " visual search
 nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
 xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
+
+" toggle whitespace
+:set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+function! WhitespaceToggle()
+  :set list!
+endfunction
+
+nnoremap <C-k> :call WhitespaceToggle()<cr>
 
 " make alternative buffer more accessible
 noremap <Leader>, <C-^>
