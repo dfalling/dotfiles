@@ -5,6 +5,7 @@
 - brew install zplug
 - brew install python3
 - brew install the_silver_searcher
+- brew install ripgrep
 
 ### iTerm
 - Profiles>Terminal>Report Terminal Type: xterm-256color
@@ -15,6 +16,7 @@
 - scm breeze: `https://github.com/scmbreeze/scm_breeze#installation`
 - Inconsolata font: `http://levien.com/type/myfonts/inconsolata.html`
 - oh-my-zsh: `https://github.com/robbyrussell/oh-my-zsh`
+- eslint_d: `npm install -g eslint_d`
 
 ### Neovim
 - Add `source ~/.cfg/nvimrc` to `~/.config/nvim/init.vim`
