@@ -6,6 +6,7 @@
 - brew install python3
 - brew install the_silver_searcher
 - brew install ripgrep
+- brew install tldr
 
 ### iTerm
 - Profiles>Terminal>Report Terminal Type: xterm-256color
