@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
-" code highlighting
-Plug 'scrooloose/syntastic'
+" code linting
+Plug 'w0rp/ale'
 " multiple cursors w/ C-n
 Plug 'terryma/vim-multiple-cursors'
 " status bar
@@ -36,34 +36,34 @@ Plug 'slashmili/alchemist.vim'
 Plug 'lambdatoast/elm.vim'
 " React support
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'Valloric/MatchTagAlways'
+Plug 'alvan/vim-closetag'
 " fuzyy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " JSON tools
 Plug 'tpope/vim-jdaddy'
+" neoformat
+Plug 'sbdchd/neoformat'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
 
 filetype plugin indent on
 
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" ale (linting) config
+let g:airline#extensions#ale#enabled = 1
+let g:ale_open_list = 1
+
 syntax on
 colorscheme onedark
 
 set ruler
-
-"Syntastic code hinting
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs=1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
 " indentation
 set tabstop=2
@@ -85,7 +85,7 @@ set backspace=indent,eol,start
  set dir=~/.tmp
 
 " fuzzy finder config
-nnoremap <C-p> :GFiles<CR>
+nnoremap <C-p> :Gfp<CR>
 
 " add Rg ripgrep command
 command! -bang -nargs=* Rg
@@ -95,15 +95,11 @@ command! -bang -nargs=* Rg
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 
+" Gfp shortcut to show gitfiles with preview
+command! -bang -nargs=* Gfp call fzf#vim#gitfiles('', fzf#vim#with_preview('right'))
 
-" airline
-let g:airline_theme='laederon'
-
-" always show status line
-set laststatus=2
-
-" hide netrw banner
-" let g:netrw_banner=0
+" Ag command to show silver searcher omitting file names from search
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 " remove delay going to escape http://www.johnhawthorn.com/2012/09/vi-escape-delays/
 set timeoutlen=1000 ttimeoutlen=0
@@ -113,7 +109,7 @@ filetype plugin on
 let mapleader=","
 
 " changing netrw list style
-let g:netrw_liststyle=3
+" let g:netrw_liststyle=3
 
 " disable ex mode
 nnoremap Q <nop>
@@ -185,13 +181,21 @@ nnoremap <C-k> :call WhitespaceToggle()<cr>
 noremap <Leader>, <C-^>
 " highlight current line
 :set cursorline
+:hi CursorLine guibg=#444444 gui=bold
 
 " highlight current column
 :set cursorcolumn
+:hi CursorColumn guibg=#444444 gui=bold
 
 " nerdcommenter
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
+
+" MatchTagAlways options
+let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'javascript.jsx': 1 }
+
+" closetag options
+let g:closetag_filenames = '*.html,*.jsx,*.hbs'
 
 " map space to :
 noremap <space> :
