@@ -22,7 +22,6 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'carlitux/deoplete-ternjs'
 " shows git status in gutter
 Plug 'airblade/vim-gitgutter'
-" Plug 'godlygeek/tabular'
 " netrw tweaks: - to hop to current path
 Plug 'tpope/vim-vinegar'
 " highlight search replace changes while typing
@@ -46,6 +45,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-jdaddy'
 " neoformat
 Plug 'sbdchd/neoformat'
+" easy motions
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
