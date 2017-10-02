@@ -11,7 +11,8 @@ ZSH_THEME="gentoo"
 
 plugins=(git, npm)
 
-alias vim=nvim
+# alias vim=nvim
+alias vim=~/Applications/nvim-osx64/bin/nvim
 
 source $ZSH/oh-my-zsh.sh
 
