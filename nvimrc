@@ -37,7 +37,7 @@ Plug 'lambdatoast/elm.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'Valloric/MatchTagAlways'
-Plug 'alvan/vim-closetag'
+" Plug 'alvan/vim-closetag'
 " fuzyy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -47,6 +47,8 @@ Plug 'tpope/vim-jdaddy'
 Plug 'sbdchd/neoformat'
 " easy motions
 Plug 'easymotion/vim-easymotion'
+" Gundo
+Plug 'sjl/gundo.vim'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
@@ -59,7 +61,13 @@ endif
 
 " ale (linting) config
 let g:airline#extensions#ale#enabled = 1
+" show fix list on errors
 let g:ale_open_list = 1
+" lint on save/open only
+let g:ale_lint_on_text_changed = 'never'
+
+" Gundo
+nnoremap <F5> :GundoToggle<CR>
 
 syntax on
 colorscheme onedark
@@ -148,6 +156,8 @@ endfunc
 " toggle relative line numbers
 nnoremap <C-l> :call NumberToggle()<cr>
 
+nnoremap <Leader>f :Neoformat<CR>
+
 " search
 :set incsearch
 :set hlsearch
@@ -179,7 +189,8 @@ endfunction
 nnoremap <C-k> :call WhitespaceToggle()<cr>
 
 " make alternative buffer more accessible
-noremap <Leader>, <C-^>
+noremap <Leader><Leader> <C-^>
+
 " highlight current line
 :set cursorline
 :hi CursorLine guibg=#444444 gui=bold
