@@ -5,7 +5,6 @@ Plug 'w0rp/ale'
 Plug 'terryma/vim-multiple-cursors'
 " status bar
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 " used by airline to show git status
 Plug 'tpope/vim-fugitive'
 " handlebars syntax support
@@ -18,7 +17,6 @@ Plug 'tpope/vim-surround'
 Plug 'joshdick/onedark.vim'
 " autocomplete
 Plug 'Shougo/deoplete.nvim'
-" add ternjs to deoplete
 Plug 'carlitux/deoplete-ternjs'
 " shows git status in gutter
 Plug 'airblade/vim-gitgutter'
@@ -33,11 +31,13 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 " elm support
 Plug 'lambdatoast/elm.vim'
-" React support
+" javascript support
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+" typescript support
+Plug 'leafgarland/typescript-vim'
+" Highlight matching tag
 Plug 'Valloric/MatchTagAlways'
-" Plug 'alvan/vim-closetag'
 " fuzyy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -55,9 +55,25 @@ call plug#end()
 
 filetype plugin indent on
 
+" style
+"
 if (has("termguicolors"))
  set termguicolors
 endif
+
+syntax on
+colorscheme onedark
+
+" highlight current line
+:set cursorline
+:hi CursorLine guibg=#444444 gui=bold
+
+" highlight current column
+:set cursorcolumn
+:hi CursorColumn guibg=#444444 gui=bold
+
+" make the line numbers not invisible
+:highlight LineNr guifg=#707070
 
 " ale (linting) config
 let g:airline#extensions#ale#enabled = 1
@@ -68,9 +84,6 @@ let g:ale_lint_on_text_changed = 'never'
 
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
-
-syntax on
-colorscheme onedark
 
 set ruler
 
@@ -83,7 +96,7 @@ set autoindent
 " enable mouse
 set mouse=a
 
-" clipboard
+" enable system clipboard
 set clipboard+=unnamedplus
 
 " backspace
@@ -191,32 +204,20 @@ nnoremap <C-k> :call WhitespaceToggle()<cr>
 " make alternative buffer more accessible
 noremap <Leader><Leader> <C-^>
 
-" highlight current line
-:set cursorline
-:hi CursorLine guibg=#444444 gui=bold
-
-" highlight current column
-:set cursorcolumn
-:hi CursorColumn guibg=#444444 gui=bold
-
 " nerdcommenter
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
 " MatchTagAlways options
-let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'javascript.jsx': 1 }
-
-" closetag options
-let g:closetag_filenames = '*.html,*.jsx,*.hbs'
+let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascript.jsx': 1 }
 
 " map space to :
 noremap <space> :
+" disable : 
+noremap : <NOP>
 
 " jk for ESC
 :imap jk <Esc>
-
-" make the line numbers not invisible (colors at https://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg)
-:highlight LineNr ctermfg=243
 
 " START better behavior of #o/O
 " o/O                   Start insert mode with [count] blank lines.
