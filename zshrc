@@ -6,7 +6,6 @@ HYPHEN_INSENSITIVE="true"
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/dfalling/.oh-my-zsh
 
-# currently overridden by antigen
 ZSH_THEME="gentoo"
 
 plugins=(git, npm)
