@@ -1,11 +1,14 @@
 call plug#begin('~/.vim/plugged')
+Plug 'terryma/vim-multiple-cursors'
+Plug 'sbdchd/neoformat'
+Plug 'easymotion/vim-easymotion'
+Plug 'sjl/gundo.vim'
+Plug 'roryokane/detectindent'
 " code linting
 Plug 'w0rp/ale'
-" multiple cursors w/ C-n
-Plug 'terryma/vim-multiple-cursors'
 " status bar
 Plug 'vim-airline/vim-airline'
-" used by airline to show git status
+" git plugin
 Plug 'tpope/vim-fugitive'
 " handlebars syntax support
 Plug 'mustache/vim-mustache-handlebars'
@@ -38,25 +41,33 @@ Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 " Highlight matching tag
 Plug 'Valloric/MatchTagAlways'
+" JSON tools
+Plug 'tpope/vim-jdaddy'
 " fuzyy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" JSON tools
-Plug 'tpope/vim-jdaddy'
-" neoformat
-Plug 'sbdchd/neoformat'
-" easy motions
-Plug 'easymotion/vim-easymotion'
-" Gundo
-Plug 'sjl/gundo.vim'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
 
-filetype plugin indent on
 
-" style
-"
+" INDENTATION ============================================
+
+filetype plugin indent on
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+
+" auto-detect indentation on file open
+augroup DetectIndent
+  autocmd!
+  autocmd BufReadPost *  DetectIndent
+augroup END
+
+
+" STYLE ==================================================
+
 if (has("termguicolors"))
  set termguicolors
 endif
@@ -75,23 +86,22 @@ colorscheme onedark
 " make the line numbers not invisible
 :highlight LineNr guifg=#707070
 
-" ale (linting) config
+" different selection color
+:hi Visual  guibg=#444444 gui=none
+
+
+" ALE (code linting) =====================================
+
 let g:airline#extensions#ale#enabled = 1
 " show fix list on errors
 let g:ale_open_list = 1
 " lint on save/open only
 let g:ale_lint_on_text_changed = 'never'
 
-" Gundo
-nnoremap <F5> :GundoToggle<CR>
+
+" FEATURES ===============================================
 
 set ruler
-
-" indentation
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set autoindent
 
 " enable mouse
 set mouse=a
@@ -106,8 +116,35 @@ set backspace=indent,eol,start
  set swapfile
  set dir=~/.tmp
 
+" needed for nerdcommenter to work
+filetype plugin on
+
+" don't wrap in the middle of a word
+set linebreak
+
+" disable vim's preview window
+set completeopt-=preview
+
+
+" SEARCH =================================================
+
+:set incsearch
+:set hlsearch
+
 " fuzzy finder config
 nnoremap <C-p> :Gfp<CR>
+
+" visual search
+nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
+xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
+"
+" vim-over helpers
+function! VisualFindAndReplace()
+  :OverCommandLine%s/
+endfunction
+function! VisualFindAndReplaceWithSelection() range
+  :'<,'>OverCommandLine s/
+endfunction
 
 " add Rg ripgrep command
 command! -bang -nargs=* Rg
@@ -126,32 +163,12 @@ command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : 
 " remove delay going to escape http://www.johnhawthorn.com/2012/09/vi-escape-delays/
 set timeoutlen=1000 ttimeoutlen=0
 
-" needed for nerdcommenter to work
-filetype plugin on
-let mapleader=","
-
-" changing netrw list style
-" let g:netrw_liststyle=3
-
-" disable ex mode
-nnoremap Q <nop>
-
-" don't wrap in the middle of a word
-set linebreak
-
 " leader j, leader k to jump to next/previous line with same indentation
 nnoremap <Leader>k :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
 nnoremap <Leader>j :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
 
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
 
-" tab through deoplete options
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-endfunction
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" LINE NUMBERS ===========================================
 
 " relative line numbers
 :set number
@@ -169,29 +186,8 @@ endfunc
 " toggle relative line numbers
 nnoremap <C-l> :call NumberToggle()<cr>
 
-nnoremap <Leader>f :Neoformat<CR>
 
-" search
-:set incsearch
-:set hlsearch
-
-" enable jumping between html tags.  requires filetype plugin on which is enabled above
-runtime macros/matchit.vim
-
-" disable vim's preview window
-set completeopt-=preview
-
-" vim-over helpers
-function! VisualFindAndReplace()
-  :OverCommandLine%s/
-endfunction
-function! VisualFindAndReplaceWithSelection() range
-  :'<,'>OverCommandLine s/
-endfunction
-
-" visual search
-nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
-xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
+" WHITE SPACE ============================================
 
 " toggle whitespace
 :set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
@@ -201,15 +197,20 @@ endfunction
 
 nnoremap <C-k> :call WhitespaceToggle()<cr>
 
-" make alternative buffer more accessible
-noremap <Leader><Leader> <C-^>
+
+" NERD COMMENTER =========================================
 
 " nerdcommenter
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
-" MatchTagAlways options
+
+" MATCH TAG ALWAYS =======================================
+
 let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascript.jsx': 1 }
+
+
+" KEY REMAPPINGS =========================================
 
 " map space to :
 noremap <space> :
@@ -219,7 +220,37 @@ noremap : <NOP>
 " jk for ESC
 :imap jk <Esc>
 
-" START better behavior of #o/O
+" make alternative buffer more accessible
+noremap <Leader>z <C-^>
+
+" Gundo
+nnoremap <F5> :GundoToggle<CR>
+
+let mapleader=","
+
+" changing netrw list style
+" let g:netrw_liststyle=3
+
+" disable ex mode
+nnoremap Q <nop>
+
+nnoremap <Leader>f :Neoformat<CR>
+
+
+" DEOPLETE ===============================================
+
+let g:deoplete#enable_at_startup = 1
+
+" tab through deoplete options
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+endfunction
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+
+" BETTER o/O BEHAVIOR ====================================
+
 " o/O                   Start insert mode with [count] blank lines.
 "                       The default behavior repeats the insertion [count]
 "                       times, which is not so useful.
@@ -242,4 +273,14 @@ function! s:NewLineInsertExpr( isUndoCount, command )
 endfunction
 nnoremap <silent> <expr> o <SID>NewLineInsertExpr(1, 'o')
 nnoremap <silent> <expr> O <SID>NewLineInsertExpr(1, 'O')
-" END
+
+
+" MULTIPLE CURSORS FIX====================================
+
+" fix deoplete inserting <Plug>_ every time I use multiple cursors
+func! Multiple_cursors_before()
+    call deoplete#init#_disable()
+endfunc
+func! Multiple_cursors_after()
+    call deoplete#init#_enable()
+endfunc
