@@ -140,10 +140,6 @@ nnoremap <C-p> :FZF<CR>
 
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
-" visual search
-nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
-xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
-"
 " vim-over helpers
 function! VisualFindAndReplace()
   :OverCommandLine%s/
@@ -151,6 +147,10 @@ endfunction
 function! VisualFindAndReplaceWithSelection() range
   :'<,'>OverCommandLine s/
 endfunction
+
+" visual search
+nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
+xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
 
 " add Rg ripgrep command
 command! -bang -nargs=* Rg
