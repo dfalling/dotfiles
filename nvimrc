@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
 Plug 'terryma/vim-multiple-cursors'
-Plug 'sbdchd/neoformat'
 Plug 'easymotion/vim-easymotion'
 Plug 'sjl/gundo.vim'
 Plug 'roryokane/detectindent'
@@ -98,6 +97,11 @@ let g:ale_open_list = 1
 " lint on save/open only
 let g:ale_lint_on_text_changed = 'never'
 
+nnoremap <Leader>p :call ALEFix<CR>
+
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
 
 " FEATURES ===============================================
 
@@ -132,7 +136,9 @@ set completeopt-=preview
 :set hlsearch
 
 " fuzzy finder config
-nnoremap <C-p> :Gfp<CR>
+nnoremap <C-p> :FZF<CR>
+
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
 " visual search
 nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
@@ -233,8 +239,6 @@ let mapleader=","
 
 " disable ex mode
 nnoremap Q <nop>
-
-nnoremap <Leader>f :Neoformat<CR>
 
 
 " DEOPLETE ===============================================
