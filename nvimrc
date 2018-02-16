@@ -88,6 +88,9 @@ colorscheme onedark
 " different selection color
 :hi Visual  guibg=#444444 gui=none
 
+" disable background color
+highlight Normal guibg=none
+highlight NonText guibg=none
 
 " ALE (code linting) =====================================
 
