@@ -3,6 +3,12 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'sjl/gundo.vim'
 Plug 'roryokane/detectindent'
+" reason
+Plug 'reasonml-editor/vim-reason-plus'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 " code linting
 Plug 'w0rp/ale'
 " status bar
@@ -18,7 +24,7 @@ Plug 'tpope/vim-surround'
 " theme
 Plug 'joshdick/onedark.vim'
 " autocomplete
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs'
 " shows git status in gutter
 Plug 'airblade/vim-gitgutter'
@@ -92,6 +98,32 @@ colorscheme onedark
 highlight Normal guibg=none
 highlight NonText guibg=none
 
+
+" KEY REMAPPINGS =========================================
+
+" map space to :
+noremap <space> :
+" disable : 
+noremap : <NOP>
+
+" jk for ESC
+:imap jk <Esc>
+
+" make alternative buffer more accessible
+noremap <Leader>z <C-^>
+
+" Gundo
+nnoremap <F5> :GundoToggle<CR>
+
+let mapleader=","
+
+" changing netrw list style
+" let g:netrw_liststyle=3
+
+" disable ex mode
+nnoremap Q <nop>
+
+
 " ALE (code linting) =====================================
 
 let g:airline#extensions#ale#enabled = 1
@@ -100,11 +132,18 @@ let g:ale_open_list = 1
 " lint on save/open only
 let g:ale_lint_on_text_changed = 'never'
 
-nnoremap <Leader>p :call ALEFix<CR>
+nmap <Leader>p <Plug>(ale_fix)
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+let g:ale_linters = {
+\   'reason': ['merlin', 'ols'],
+\}
+
+let g:ale_fixers = {
+\   'reason': ['refmt'],
+\}
 
 " FEATURES ===============================================
 
@@ -219,31 +258,6 @@ let g:NERDSpaceDelims = 1
 let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascript.jsx': 1 }
 
 
-" KEY REMAPPINGS =========================================
-
-" map space to :
-noremap <space> :
-" disable : 
-noremap : <NOP>
-
-" jk for ESC
-:imap jk <Esc>
-
-" make alternative buffer more accessible
-noremap <Leader>z <C-^>
-
-" Gundo
-nnoremap <F5> :GundoToggle<CR>
-
-let mapleader=","
-
-" changing netrw list style
-" let g:netrw_liststyle=3
-
-" disable ex mode
-nnoremap Q <nop>
-
-
 " DEOPLETE ===============================================
 
 let g:deoplete#enable_at_startup = 1
@@ -291,3 +305,16 @@ endfunc
 func! Multiple_cursors_after()
     call deoplete#init#_enable()
 endfunc
+
+
+" LANGUAGE CLIENT ========================================
+
+
+let g:LanguageClient_serverCommands = {
+    \ 'reason': ['ocaml-language-server', '--stdio'],
+    \ 'ocaml': ['ocaml-language-server', '--stdio'],
+    \ }
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
