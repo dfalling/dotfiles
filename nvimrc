@@ -296,17 +296,6 @@ nnoremap <silent> <expr> o <SID>NewLineInsertExpr(1, 'o')
 nnoremap <silent> <expr> O <SID>NewLineInsertExpr(1, 'O')
 
 
-" MULTIPLE CURSORS FIX====================================
-
-" fix deoplete inserting <Plug>_ every time I use multiple cursors
-func! Multiple_cursors_before()
-    call deoplete#init#_disable()
-endfunc
-func! Multiple_cursors_after()
-    call deoplete#init#_enable()
-endfunc
-
-
 " LANGUAGE CLIENT ========================================
 
 
