@@ -34,6 +34,8 @@ Plug 'tpope/vim-vinegar'
 Plug 'osyo-manga/vim-over'
 " color css colors in text
 Plug 'ap/vim-css-color'
+" show count in gutter for git differences
+Plug 'mhinz/vim-signify'
 " elixir support
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
