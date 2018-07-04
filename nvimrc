@@ -132,7 +132,7 @@ let g:airline#extensions#ale#enabled = 1
 " show fix list on errors
 let g:ale_open_list = 1
 " lint on save/open only
-let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_text_changed = 'never'
 
 nmap <Leader>p <Plug>(ale_fix)
 
