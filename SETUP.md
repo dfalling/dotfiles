@@ -22,5 +22,8 @@
 ### Neovim
 - Add `source ~/.cfg/nvimrc` to `~/.config/nvim/init.vim`
 
+### Tmux
+- tpm: `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+
 ### Config files
 - symlink gitconfig, gitignore, tmux.conf

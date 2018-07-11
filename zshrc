@@ -51,6 +51,9 @@ alias notify="success || fail"
 # enable vim mode for zsh (hit ESC to switch to normal mode)
 bindkey -v
 
+# CTRL-SPACE to accept autosuggest
+bindkey '^ ' autosuggest-accept
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -s "/Users/dfalling/.scm_breeze/scm_breeze.sh" ] && source "/Users/dfalling/.scm_breeze/scm_breeze.sh"
