@@ -139,14 +139,6 @@ nmap <Leader>p <Plug>(ale_fix)
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-let g:ale_linters = {
-\   'reason': ['merlin', 'ols'],
-\}
-
-let g:ale_fixers = {
-\   'reason': ['refmt'],
-\}
-
 " FEATURES ===============================================
 
 set ruler
@@ -245,7 +237,7 @@ function! WhitespaceToggle()
   :set list!
 endfunction
 
-nnoremap <C-k> :call WhitespaceToggle()<cr>
+nnoremap <C-;> :call WhitespaceToggle()<cr>
 
 
 " NERD COMMENTER =========================================
