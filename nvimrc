@@ -53,6 +53,8 @@ Plug 'tpope/vim-jdaddy'
 " fuzyy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" tmux integration
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
@@ -125,6 +127,9 @@ let mapleader=","
 " disable ex mode
 nnoremap Q <nop>
 
+" fix C-h tmux navigator binding
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+
 
 " ALE (code linting) =====================================
 
@@ -135,9 +140,10 @@ let g:ale_open_list = 1
 " let g:ale_lint_on_text_changed = 'never'
 
 nmap <Leader>p <Plug>(ale_fix)
+nmap <Leader>g <Plug>(ale_go_to_definition)
 
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
+nmap <silent> <Leader>j <Plug>(ale_next_wrap)
 
 " FEATURES ===============================================
 
@@ -206,8 +212,8 @@ command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : 
 set timeoutlen=1000 ttimeoutlen=0
 
 " leader j, leader k to jump to next/previous line with same indentation
-nnoremap <Leader>k :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
-nnoremap <Leader>j :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
+nnoremap <Leader>[ :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
+nnoremap <Leader>] :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
 
 
 " LINE NUMBERS ===========================================
@@ -226,7 +232,7 @@ function! NumberToggle()
 endfunc
 
 " toggle relative line numbers
-nnoremap <C-l> :call NumberToggle()<cr>
+nnoremap <Leader>l :call NumberToggle()<cr>
 
 
 " WHITE SPACE ============================================
