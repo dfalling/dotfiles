@@ -65,3 +65,5 @@ PROMPT='%{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%_$(prompt_char)%{$reset
 alias gpsu="gps -u origin HEAD"
 alias gfp="gps --force-with-lease"
 alias s="git status"
+
+eval "$(direnv hook zsh)"

@@ -7,6 +7,7 @@
 - brew install the_silver_searcher
 - brew install ripgrep
 - brew install tldr
+- brew install direnv
 
 ### iTerm
 - Profiles>Terminal>Report Terminal Type: xterm-256color
