@@ -6,8 +6,6 @@ HYPHEN_INSENSITIVE="true"
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/dfalling/.oh-my-zsh
 
-ZSH_THEME="gentoo"
-
 plugins=(git, npm)
 
 source $ZSH/oh-my-zsh.sh
@@ -28,6 +26,10 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # enhancd - https://github.com/b4b4r07/enhancd
 zplug 'b4b4r07/enhancd', use:init.sh
 
+# theme
+zplug mafredri/zsh-async, from:github
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -38,11 +40,6 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load > /dev/null
-
-alias blink-red="blink1-tool --rgb FF0000 --blink 3"
-alias blink-green="blink1-tool --rgb 00FF00 --blink 3"
-alias blink-blue="blink1-tool --rgb 0000FF --blink 3"
-alias alert="blink-green || blink-red"
 
 alias success="osascript -e 'display notification \"Your CLI command completed successfully\" with title \"Success\"'"
 alias fail="osascript -e 'display notification \"Your CLI command failed\" with title \"Error\"'"
@@ -57,9 +54,6 @@ bindkey '^ ' autosuggest-accept
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -s "/Users/dfalling/.scm_breeze/scm_breeze.sh" ] && source "/Users/dfalling/.scm_breeze/scm_breeze.sh"
-
-# same as gentoo theme, but with computer.user removed from the front
-PROMPT='%{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%_$(prompt_char)%{$reset_color%} '
 
 # more git aliases in addition to scm breeze
 alias gpsu="gps -u origin HEAD"
