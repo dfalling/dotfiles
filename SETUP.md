@@ -17,7 +17,6 @@
 - scm breeze: `https://github.com/scmbreeze/scm_breeze#installation`
 - Inconsolata font: `http://levien.com/type/myfonts/inconsolata.html`
 - oh-my-zsh: `https://github.com/robbyrussell/oh-my-zsh`
-- eslint_d: `npm install -g eslint_d`
 - snazzy colors: `https://github.com/sindresorhus/iterm2-snazzy`
 
 ### Neovim
