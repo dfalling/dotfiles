@@ -1,6 +1,5 @@
 ### Requirements
 - brew install tmux
-- brew install reattach-to-user-namespace
 - brew install neovim/neovim/neovim
 - brew install zplug
 - brew install python3
@@ -19,6 +18,7 @@
 - Inconsolata font: `http://levien.com/type/myfonts/inconsolata.html`
 - oh-my-zsh: `https://github.com/robbyrussell/oh-my-zsh`
 - eslint_d: `npm install -g eslint_d`
+- snazzy colors: `https://github.com/sindresorhus/iterm2-snazzy`
 
 ### Neovim
 - Add `source ~/.cfg/nvimrc` to `~/.config/nvim/init.vim`
