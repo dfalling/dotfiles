@@ -55,6 +55,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " tmux integration
 Plug 'christoomey/vim-tmux-navigator'
+" Vue support
+Plug 'posva/vim-vue'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
@@ -141,6 +143,7 @@ let g:ale_open_list = 1
 
 nmap <Leader>p <Plug>(ale_fix)
 nmap <Leader>g <Plug>(ale_go_to_definition)
+nmap <Leader>G <Plug>(ale_go_to_definition_in_tab)
 
 nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>j <Plug>(ale_next_wrap)
@@ -243,7 +246,7 @@ function! WhitespaceToggle()
   :set list!
 endfunction
 
-nnoremap <C-;> :call WhitespaceToggle()<cr>
+nnoremap <Leader>; :call WhitespaceToggle()<cr>
 
 
 " NERD COMMENTER =========================================
