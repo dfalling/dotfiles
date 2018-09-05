@@ -6,8 +6,6 @@ HYPHEN_INSENSITIVE="true"
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/dfalling/.oh-my-zsh
 
-plugins=(git, npm)
-
 source $ZSH/oh-my-zsh.sh
 
 # zplug
