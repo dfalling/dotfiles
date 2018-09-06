@@ -1,21 +1,17 @@
+# DEPRECATE? I think this is longer needed.  testing for a bit to make sure
 # 10ms for key sequences http://www.johnhawthorn.com/2012/09/vi-escape-delays/
-KEYTIMEOUT=1
+# KEYTIMEOUT=1
 
 HYPHEN_INSENSITIVE="true"
-
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/dfalling/.oh-my-zsh
-
-source $ZSH/oh-my-zsh.sh
 
 # zplug
 ZPLUG_HOME="$( brew --prefix )"/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-# Syntax highlighting bundle.
+# Syntax highlighting bundle - https://github.com/zsh-users/zsh-syntax-highlighting
 zplug "zsh-users/zsh-syntax-highlighting"
 
-# auto complete suggestions
+# auto complete suggestions - https://github.com/zsh-users/zsh-autosuggestions
 zplug "zsh-users/zsh-autosuggestions"
 
 # let zplug manage itself
