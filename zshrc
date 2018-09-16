@@ -20,9 +20,6 @@ zplug 'b4b4r07/enhancd', use:init.sh
 zplug mafredri/zsh-async, from:github
 zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 
-# colored ls
-zplug "trapd00r/zsh-syntax-highlighting-filetypes"
-
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
