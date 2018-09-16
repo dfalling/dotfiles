@@ -1,7 +1,3 @@
-# DEPRECATE? I think this is longer needed.  testing for a bit to make sure
-# 10ms for key sequences http://www.johnhawthorn.com/2012/09/vi-escape-delays/
-# KEYTIMEOUT=1
-
 HYPHEN_INSENSITIVE="true"
 
 # zplug
@@ -23,6 +19,9 @@ zplug 'b4b4r07/enhancd', use:init.sh
 # theme
 zplug mafredri/zsh-async, from:github
 zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+
+# colored ls
+zplug "trapd00r/zsh-syntax-highlighting-filetypes"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
