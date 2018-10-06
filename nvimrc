@@ -136,11 +136,11 @@ nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
 " ALE (code linting) =====================================
 
-let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#ale#enabled = 1
 " show fix list on errors
 let g:ale_open_list = 1
-" lint on save/open only
-" let g:ale_lint_on_text_changed = 'never'
+
+let g:ale_fix_on_save = 1
 
 nmap <Leader>p <Plug>(ale_fix)
 nmap <Leader>g <Plug>(ale_go_to_definition)
@@ -148,6 +148,32 @@ nmap <Leader>G <Plug>(ale_go_to_definition_in_tab)
 
 nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>j <Plug>(ale_next_wrap)
+
+let g:ale_reasonml_refmt_options = '-w 120'
+
+let g:ale_fixers = {
+\   'javascript': [
+\       'prettier',
+\       'eslint',
+\   ],
+\   'vue': [
+\       'prettier',
+\       'eslint',
+\   ],
+\   'typescript': [
+\       'prettier',
+\       'tslint',
+\   ],
+\   'reason': [
+\       'refmt',
+\   ],
+\   'python': [
+\       'autopep8',
+\   ],
+\   'elixir': [
+\       'mix_format',
+\   ]
+\}
 
 " FEATURES ===============================================
 
