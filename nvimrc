@@ -53,8 +53,6 @@ Plug 'tpope/vim-jdaddy'
 " fuzyy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" tmux integration
-Plug 'christoomey/vim-tmux-navigator'
 " Vue support
 Plug 'posva/vim-vue'
 call plug#end()
