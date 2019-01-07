@@ -48,6 +48,18 @@ bindkey '^ ' autosuggest-accept
 # more git aliases in addition to scm breeze
 alias gpsu="gps -u origin HEAD"
 alias gfp="gps --force-with-lease"
+alias gcm="gco master && gpl"
 alias s="git status"
+
+##############################################################################
+# History Configuration
+##############################################################################
+HISTSIZE=5000               #How many lines of history to keep in memory
+HISTFILE=~/.zsh_history     #Where to save history to disk
+SAVEHIST=5000               #Number of history entries to save to disk
+HISTDUP=erase               #Erase duplicates in the history file
+setopt    appendhistory     #Append history to the history file (no overwriting)
+setopt    sharehistory      #Share history across terminals
+setopt incappendhistory #Immediately append to the history file, not just when a term is killed
 
 eval "$(direnv hook zsh)"
