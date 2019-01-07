@@ -48,7 +48,7 @@ bindkey '^ ' autosuggest-accept
 # more git aliases in addition to scm breeze
 alias gpsu="gps -u origin HEAD"
 alias gfp="gps --force-with-lease"
-alias gcm="gco master && gpl"
+alias gcp="gco master && gpl"
 alias s="git status"
 
 ##############################################################################
