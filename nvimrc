@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
-Plug 'sjl/gundo.vim'
 Plug 'roryokane/detectindent'
 " reason
 Plug 'reasonml-editor/vim-reason-plus'
@@ -39,8 +38,6 @@ Plug 'mhinz/vim-signify'
 " elixir support
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
-" elm support
-Plug 'lambdatoast/elm.vim'
 " javascript support
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -48,13 +45,13 @@ Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 " Highlight matching tag
 Plug 'Valloric/MatchTagAlways'
-" JSON tools
-Plug 'tpope/vim-jdaddy'
 " fuzyy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Vue support
 Plug 'posva/vim-vue'
+" vim sneak
+Plug 'justinmk/vim-sneak'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
@@ -130,10 +127,6 @@ let mapleader=","
 " disable ex mode
 nnoremap Q <nop>
 
-" fix C-h tmux navigator binding
-nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-
-
 " ALE (code linting) =====================================
 
 " let g:airline#extensions#ale#enabled = 1
@@ -150,6 +143,7 @@ nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>j <Plug>(ale_next_wrap)
 
 let g:ale_reasonml_refmt_options = '-w 120'
+let g:ale_reasonml_refmt_executable = 'bsrefmt'
 
 let g:ale_fixers = {
 \   'javascript': [
@@ -166,9 +160,6 @@ let g:ale_fixers = {
 \   ],
 \   'reason': [
 \       'refmt',
-\   ],
-\   'python': [
-\       'autopep8',
 \   ],
 \   'elixir': [
 \       'mix_format',
