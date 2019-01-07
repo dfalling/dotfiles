@@ -8,25 +8,18 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-" code linting
+" code linting, completion, formatting
 Plug 'w0rp/ale'
 " status bar
 Plug 'vim-airline/vim-airline'
 " git plugin
 Plug 'tpope/vim-fugitive'
-" handlebars syntax support
-Plug 'mustache/vim-mustache-handlebars'
 " quickly comment lines
 Plug 'scrooloose/nerdcommenter'
 " easily change surroundings with cs
 Plug 'tpope/vim-surround'
 " theme
 Plug 'joshdick/onedark.vim'
-" autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs'
-" shows git status in gutter
-Plug 'airblade/vim-gitgutter'
 " netrw tweaks: - to hop to current path
 Plug 'tpope/vim-vinegar'
 " highlight search replace changes while typing
@@ -45,12 +38,10 @@ Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 " Highlight matching tag
 Plug 'Valloric/MatchTagAlways'
-" fuzyy finder
+" fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Vue support
-Plug 'posva/vim-vue'
-" vim sneak
+" use s to jump to a two character match
 Plug 'justinmk/vim-sneak'
 call plug#end()
 
@@ -116,24 +107,20 @@ noremap : <NOP>
 " make alternative buffer more accessible
 noremap <Leader>z <C-^>
 
-" Gundo
-nnoremap <F5> :GundoToggle<CR>
-
 let mapleader=","
-
-" changing netrw list style
-" let g:netrw_liststyle=3
 
 " disable ex mode
 nnoremap Q <nop>
 
 " ALE (code linting) =====================================
 
-" let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 " show fix list on errors
 let g:ale_open_list = 1
 
 let g:ale_fix_on_save = 1
+
+let g:ale_completion_enabled = 1
 
 nmap <Leader>p <Plug>(ale_fix)
 nmap <Leader>g <Plug>(ale_go_to_definition)
@@ -165,6 +152,15 @@ let g:ale_fixers = {
 \       'mix_format',
 \   ]
 \}
+
+" COMPLETION =============================================
+
+" http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+:set completeopt=longest,menuone
+
+" ENTER accept completion suggestion
+:inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 
 " FEATURES ===============================================
 
@@ -232,10 +228,6 @@ command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : 
 " remove delay going to escape http://www.johnhawthorn.com/2012/09/vi-escape-delays/
 set timeoutlen=1000 ttimeoutlen=0
 
-" leader j, leader k to jump to next/previous line with same indentation
-nnoremap <Leader>[ :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
-nnoremap <Leader>] :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
-
 
 " LINE NUMBERS ===========================================
 
@@ -277,18 +269,6 @@ let g:NERDSpaceDelims = 1
 " MATCH TAG ALWAYS =======================================
 
 let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascript.jsx': 1 }
-
-
-" DEOPLETE ===============================================
-
-let g:deoplete#enable_at_startup = 1
-
-" tab through deoplete options
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-endfunction
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 " BETTER o/O BEHAVIOR ====================================
