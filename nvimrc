@@ -135,11 +135,6 @@ let g:ale_reasonml_refmt_executable = 'bsrefmt'
 let g:ale_fixers = {
 \   'javascript': [
 \       'prettier',
-\       'eslint',
-\   ],
-\   'vue': [
-\       'prettier',
-\       'eslint',
 \   ],
 \   'typescript': [
 \       'prettier',
