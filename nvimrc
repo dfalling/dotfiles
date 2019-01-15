@@ -120,7 +120,14 @@ let g:ale_open_list = 1
 
 let g:ale_fix_on_save = 1
 
+" completion
 let g:ale_completion_enabled = 1
+
+" http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+set completeopt=menu,menuone,preview,noselect,noinsert
+
+" ENTER accept completion suggestion
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 nmap <Leader>p <Plug>(ale_fix)
 nmap <Leader>g <Plug>(ale_go_to_definition)
@@ -147,14 +154,6 @@ let g:ale_fixers = {
 \       'mix_format',
 \   ]
 \}
-
-" COMPLETION =============================================
-
-" http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
-:set completeopt=longest,menuone
-
-" ENTER accept completion suggestion
-:inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 
 " FEATURES ===============================================
@@ -188,6 +187,8 @@ set completeopt-=preview
 
 :set incsearch
 :set hlsearch
+" escape to unhighlight searches
+noremap <ESC> :noh<CR><ESC>
 
 " fuzzy finder config
 nnoremap <C-p> :FZF<CR>
