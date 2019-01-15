@@ -51,6 +51,10 @@ alias gfp="gps --force-with-lease"
 alias gcp="gco master && gpl"
 alias s="git status"
 
+# ls aliases
+alias ls='ls -G'
+alias ll='ls -lG'
+
 ##############################################################################
 # History Configuration
 ##############################################################################
