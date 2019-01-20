@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
-Plug 'sjl/gundo.vim'
 Plug 'roryokane/detectindent'
 " reason
 Plug 'reasonml-editor/vim-reason-plus'
@@ -9,25 +8,18 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-" code linting
+" code linting, completion, formatting
 Plug 'w0rp/ale'
 " status bar
 Plug 'vim-airline/vim-airline'
 " git plugin
 Plug 'tpope/vim-fugitive'
-" handlebars syntax support
-Plug 'mustache/vim-mustache-handlebars'
 " quickly comment lines
 Plug 'scrooloose/nerdcommenter'
 " easily change surroundings with cs
 Plug 'tpope/vim-surround'
 " theme
 Plug 'joshdick/onedark.vim'
-" autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs'
-" shows git status in gutter
-Plug 'airblade/vim-gitgutter'
 " netrw tweaks: - to hop to current path
 Plug 'tpope/vim-vinegar'
 " highlight search replace changes while typing
@@ -39,8 +31,6 @@ Plug 'mhinz/vim-signify'
 " elixir support
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
-" elm support
-Plug 'lambdatoast/elm.vim'
 " javascript support
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -48,13 +38,11 @@ Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 " Highlight matching tag
 Plug 'Valloric/MatchTagAlways'
-" JSON tools
-Plug 'tpope/vim-jdaddy'
-" fuzyy finder
+" fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Vue support
-Plug 'posva/vim-vue'
+" use s to jump to a two character match
+Plug 'justinmk/vim-sneak'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
@@ -119,28 +107,27 @@ noremap : <NOP>
 " make alternative buffer more accessible
 noremap <Leader>z <C-^>
 
-" Gundo
-nnoremap <F5> :GundoToggle<CR>
-
 let mapleader=","
-
-" changing netrw list style
-" let g:netrw_liststyle=3
 
 " disable ex mode
 nnoremap Q <nop>
 
-" fix C-h tmux navigator binding
-nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-
-
 " ALE (code linting) =====================================
 
-" let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 " show fix list on errors
 let g:ale_open_list = 1
 
 let g:ale_fix_on_save = 1
+
+" completion
+let g:ale_completion_enabled = 1
+
+" http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+set completeopt=menu,menuone,preview,noselect,noinsert
+
+" ENTER accept completion suggestion
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 nmap <Leader>p <Plug>(ale_fix)
 nmap <Leader>g <Plug>(ale_go_to_definition)
@@ -150,15 +137,11 @@ nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>j <Plug>(ale_next_wrap)
 
 let g:ale_reasonml_refmt_options = '-w 120'
+let g:ale_reasonml_refmt_executable = 'bsrefmt'
 
 let g:ale_fixers = {
 \   'javascript': [
 \       'prettier',
-\       'eslint',
-\   ],
-\   'vue': [
-\       'prettier',
-\       'eslint',
 \   ],
 \   'typescript': [
 \       'prettier',
@@ -167,13 +150,11 @@ let g:ale_fixers = {
 \   'reason': [
 \       'refmt',
 \   ],
-\   'python': [
-\       'autopep8',
-\   ],
 \   'elixir': [
 \       'mix_format',
 \   ]
 \}
+
 
 " FEATURES ===============================================
 
@@ -206,6 +187,8 @@ set completeopt-=preview
 
 :set incsearch
 :set hlsearch
+" escape to unhighlight searches
+noremap <ESC> :noh<CR><ESC>
 
 " fuzzy finder config
 nnoremap <C-p> :FZF<CR>
@@ -240,10 +223,6 @@ command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : 
 
 " remove delay going to escape http://www.johnhawthorn.com/2012/09/vi-escape-delays/
 set timeoutlen=1000 ttimeoutlen=0
-
-" leader j, leader k to jump to next/previous line with same indentation
-nnoremap <Leader>[ :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
-nnoremap <Leader>] :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
 
 
 " LINE NUMBERS ===========================================
@@ -286,18 +265,6 @@ let g:NERDSpaceDelims = 1
 " MATCH TAG ALWAYS =======================================
 
 let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascript.jsx': 1 }
-
-
-" DEOPLETE ===============================================
-
-let g:deoplete#enable_at_startup = 1
-
-" tab through deoplete options
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-endfunction
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 " BETTER o/O BEHAVIOR ====================================
