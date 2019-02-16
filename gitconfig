@@ -20,6 +20,7 @@
 	prompt = false
 [mergetool]
 	prompt = false
+	keepBackup = false
 [diff]
 	tool = Kaleidoscope
 [core]
@@ -27,3 +28,5 @@
 	editor = nvim
 [url "https://"]
 	insteadOf = git://
+[rerere]
+	enabled = true
