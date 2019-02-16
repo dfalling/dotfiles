@@ -43,6 +43,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " use s to jump to a two character match
 Plug 'justinmk/vim-sneak'
+" use tab to complete autocompletions
+Plug 'ervandew/supertab'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
