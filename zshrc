@@ -46,10 +46,12 @@ bindkey '^ ' autosuggest-accept
 [ -s "/Users/dfalling/.scm_breeze/scm_breeze.sh" ] && source "/Users/dfalling/.scm_breeze/scm_breeze.sh"
 
 # more git aliases in addition to scm breeze
-alias gpsu="gps -u origin HEAD"
-alias gfp="gps --force-with-lease"
-alias gcp="gco master && gpl"
+alias gpsu="git push -u origin HEAD"
+alias gfp="git push --force-with-lease"
+alias gcp="git checkout master && git pull"
 alias s="git status"
+alias grbc="git rebase --continue"
+alias gmt="git mergetool"
 
 # ls aliases
 alias ls='ls -G'
