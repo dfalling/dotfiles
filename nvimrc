@@ -45,6 +45,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 " use tab to complete autocompletions
 Plug 'ervandew/supertab'
+" case matching find/replace
+Plug 'tpope/vim-abolish'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
@@ -293,6 +295,17 @@ function! s:NewLineInsertExpr( isUndoCount, command )
 endfunction
 nnoremap <silent> <expr> o <SID>NewLineInsertExpr(1, 'o')
 nnoremap <silent> <expr> O <SID>NewLineInsertExpr(1, 'O')
+
+
+" COPY WINDOW SHORTCUT ===================================
+
+
+function! DuplicateWindow()
+  :sp
+  :wincmd T
+endfunction
+
+nnoremap <Leader>d :call DuplicateWindow()<cr>
 
 
 " LANGUAGE CLIENT ========================================
