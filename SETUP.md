@@ -20,6 +20,7 @@
 
 ### Neovim
 - Add `source ~/.cfg/nvimrc` to `~/.config/nvim/init.vim`
+- `ln -s ~/.cfg/ftplugin` in `~/.config/nvim`
 
 ### Tmux
 - tpm: `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`

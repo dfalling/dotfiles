@@ -102,7 +102,7 @@ highlight NonText guibg=none
 
 " map space to :
 noremap <space> :
-" disable : 
+" disable :
 noremap : <NOP>
 
 " jk for ESC
@@ -117,6 +117,9 @@ let mapleader=","
 nnoremap Q <nop>
 
 " ALE (code linting) =====================================
+
+" show hover info on mouseover
+let b:ale_set_balloons = 1
 
 let g:airline#extensions#ale#enabled = 1
 " show fix list on errors
@@ -140,25 +143,12 @@ nmap <Leader>G <Plug>(ale_go_to_definition_in_tab)
 nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>j <Plug>(ale_next_wrap)
 
-let g:ale_reasonml_refmt_options = '-w 120'
-let g:ale_reasonml_refmt_executable = 'bsrefmt'
+let g:ale_linter_aliases = {}
+let g:ale_linter_aliases.jsx = ['css', 'javascript']
 
-let g:ale_fixers = {
-\   'javascript': [
-\       'prettier',
-\   ],
-\   'typescript': [
-\       'prettier',
-\       'tslint',
-\   ],
-\   'reason': [
-\       'refmt',
-\   ],
-\   'elixir': [
-\       'mix_format',
-\   ]
-\}
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
 
+" Most of ALE config is in ftplugin/filetype.vim files
 
 " FEATURES ===============================================
 
