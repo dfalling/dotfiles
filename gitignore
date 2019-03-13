@@ -3,3 +3,4 @@
 .node-version
 .envrc
 .vscode
+.elixir_ls
