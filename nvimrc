@@ -47,6 +47,8 @@ Plug 'justinmk/vim-sneak'
 Plug 'ervandew/supertab'
 " case matching find/replace
 Plug 'tpope/vim-abolish'
+" keyboard mappings for common actions
+Plug 'tpope/vim-unimpaired'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
@@ -118,9 +120,6 @@ nnoremap Q <nop>
 
 " ALE (code linting) =====================================
 
-" show hover info on mouseover
-let b:ale_set_balloons = 1
-
 let g:airline#extensions#ale#enabled = 1
 " show fix list on errors
 let g:ale_open_list = 1
@@ -139,6 +138,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <Leader>p <Plug>(ale_fix)
 nmap <Leader>g <Plug>(ale_go_to_definition)
 nmap <Leader>G <Plug>(ale_go_to_definition_in_tab)
+nmap <Leader>h <Plug>(ale_hover)
 
 nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>j <Plug>(ale_next_wrap)
