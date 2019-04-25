@@ -1,2 +1,2 @@
-let b:ale_linter_aliases = ['css', 'javascript']
-let b:ale_linters = ['stylelint', 'flow']
+let b:ale_linters = ['stylelint', 'flow', 'flow-language-server']
+let b:ale_fixers = ['prettier']
