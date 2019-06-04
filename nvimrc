@@ -2,12 +2,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'roryokane/detectindent'
-" reason
-Plug 'reasonml-editor/vim-reason-plus'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 " code linting, completion, formatting
 Plug 'w0rp/ale'
 " status bar
@@ -28,6 +22,24 @@ Plug 'osyo-manga/vim-over'
 Plug 'ap/vim-css-color'
 " show count in gutter for git differences
 Plug 'mhinz/vim-signify'
+" Highlight matching tag
+Plug 'Valloric/MatchTagAlways'
+" fuzzy finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+" use tab to complete autocompletions
+Plug 'ervandew/supertab'
+" case matching find/replace
+Plug 'tpope/vim-abolish'
+" show number beside tab name
+Plug 'mkitt/tabline.vim'
+
+" reason support
+Plug 'reasonml-editor/vim-reason-plus'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 " elixir support
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
@@ -36,19 +48,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 " typescript support
 Plug 'leafgarland/typescript-vim'
-" Highlight matching tag
-Plug 'Valloric/MatchTagAlways'
-" fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-" use s to jump to a two character match
-Plug 'justinmk/vim-sneak'
-" use tab to complete autocompletions
-Plug 'ervandew/supertab'
-" case matching find/replace
-Plug 'tpope/vim-abolish'
-" keyboard mappings for common actions
-Plug 'tpope/vim-unimpaired'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
@@ -176,6 +175,8 @@ set linebreak
 " disable vim's preview window
 set completeopt-=preview
 
+" use vertical split instead of horizontal for diffs
+set diffopt+=vertical
 
 " SEARCH =================================================
 
