@@ -7,7 +7,9 @@ Plug 'w0rp/ale'
 " status bar
 Plug 'vim-airline/vim-airline'
 " git plugin
-Plug 'tpope/vim-fugitive'
+" I haven't really been using fugitive at all, disabling to see if I miss
+" it...
+" Plug 'tpope/vim-fugitive'
 " quickly comment lines
 Plug 'scrooloose/nerdcommenter'
 " easily change surroundings with cs
