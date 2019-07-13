@@ -31,10 +31,6 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load > /dev/null
 
-alias success="osascript -e 'display notification \"Your CLI command completed successfully\" with title \"Success\"'"
-alias fail="osascript -e 'display notification \"Your CLI command failed\" with title \"Error\"'"
-alias notify="success || fail"
-
 # enable vim mode for zsh (hit ESC to switch to normal mode)
 bindkey -v
 
