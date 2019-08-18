@@ -20,8 +20,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'tpope/vim-vinegar'
 " highlight search replace changes while typing
 Plug 'osyo-manga/vim-over'
-" color css colors in text
-Plug 'ap/vim-css-color'
 " show count in gutter for git differences
 Plug 'mhinz/vim-signify'
 " Highlight matching tag
@@ -38,10 +36,6 @@ Plug 'mkitt/tabline.vim'
 
 " reason support
 Plug 'reasonml-editor/vim-reason-plus'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 " elixir support
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
@@ -110,9 +104,6 @@ noremap : <NOP>
 
 " jk for ESC
 :imap jk <Esc>
-
-" make alternative buffer more accessible
-noremap <Leader>z <C-^>
 
 let mapleader=","
 
@@ -222,6 +213,18 @@ command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : 
 set timeoutlen=1000 ttimeoutlen=0
 
 
+" BUFFERS ================================================
+
+" make alternative buffer more accessible
+noremap <Leader>z <C-^>
+
+" Show fzf buffers after leader-b
+nnoremap <Leader>b :Buffers<CR>
+
+" Need to figure this one out: closes all other buffers
+" nnoremap <Leader>d :%bd|e#<CR>
+
+
 " LINE NUMBERS ===========================================
 
 " relative line numbers
@@ -299,16 +302,3 @@ function! DuplicateWindow()
 endfunction
 
 nnoremap <Leader>d :call DuplicateWindow()<cr>
-
-
-" LANGUAGE CLIENT ========================================
-
-
-let g:LanguageClient_serverCommands = {
-    \ 'reason': ['ocaml-language-server', '--stdio'],
-    \ 'ocaml': ['ocaml-language-server', '--stdio'],
-    \ }
-
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
