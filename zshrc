@@ -16,6 +16,9 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # enhancd - https://github.com/b4b4r07/enhancd
 zplug 'b4b4r07/enhancd', use:init.sh
 
+# bd to cd up directories https://github.com/Tarrasch/zsh-bd
+zplug 'Tarrasch/zsh-bd'
+
 # theme
 zplug mafredri/zsh-async, from:github
 zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
@@ -45,7 +48,6 @@ bindkey '^ ' autosuggest-accept
 alias gpsu="git push -u origin HEAD"
 alias gfp="git push --force-with-lease"
 alias gcp="git checkout master && git pull"
-alias s="git status"
 alias grbc="git rebase --continue"
 alias gmt="git mergetool"
 
@@ -54,6 +56,10 @@ alias ls='ls -G'
 alias ll='ls -lG'
 
 alias vim=nvim
+
+# some homebrew apps complain about locale without this...
+# https://github.com/Homebrew/homebrew-core/issues/41139
+export LC_ALL=en_US.UTF-8
 
 ##############################################################################
 # History Configuration
