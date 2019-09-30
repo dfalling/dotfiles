@@ -3,7 +3,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'roryokane/detectindent'
 Plug 'jaxbot/semantic-highlight.vim'
 " code linting, completion, formatting
-Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " status bar
 Plug 'vim-airline/vim-airline'
 " git plugin
@@ -115,37 +115,52 @@ let mapleader=","
 " disable ex mode
 nnoremap Q <nop>
 
-" ALE (code linting) =====================================
 
-let g:airline#extensions#ale#enabled = 1
-" show fix list on errors
-let g:ale_open_list = 1
+" COC CONFIG =============================================
 
-let g:ale_fix_on_save = 1
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
 
-" completion
-let g:ale_completion_enabled = 1
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
 
-" http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
-set completeopt=menu,menuone,preview,noselect,noinsert
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Or use `complete_info` if your vim support it, like:
+" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" ENTER accept completion suggestion
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-nmap <Leader>p <Plug>(ale_fix)
-nmap <Leader>g <Plug>(ale_go_to_definition)
-nmap <Leader>G <Plug>(ale_go_to_definition_in_tab)
-nmap <Leader>h <Plug>(ale_hover)
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
-nmap <silent> <Leader>j <Plug>(ale_next_wrap)
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-let g:ale_linter_aliases = {}
-let g:ale_linter_aliases.jsx = ['css', 'javascript']
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
-let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Most of ALE config is in ftplugin/filetype.vim files
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " FEATURES ===============================================
 
