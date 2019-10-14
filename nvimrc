@@ -44,6 +44,11 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 " typescript support
 Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+" yaml
+Plug 'stephpy/vim-yaml'
+" many others...
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
