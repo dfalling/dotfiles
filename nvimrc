@@ -1,5 +1,4 @@
 call plug#begin('~/.vim/plugged')
-Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'roryokane/detectindent'
 Plug 'jaxbot/semantic-highlight.vim'
