@@ -6,5 +6,6 @@ ln -s ~/.cfg/nvim/cocsettings.json ~/.config/nvim/
 # other configs
 ln -s ~/.cfg/gitignore ~/.gitignore
 ln -s ~/.cfg/tmux.conf ~/.tmux.conf
+ln -s ~/.cfg/zshrc ~/.zshrc
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
