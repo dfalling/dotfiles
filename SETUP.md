@@ -9,9 +9,7 @@
 - brew install direnv
 
 ### iTerm
-- Profiles>Terminal>Report Terminal Type: xterm-256color
-- Profiles>Window>Style: No Title Bar
-- Advanced>Terminal windows resize smoothly: Yes
+- General>Preferences: Load preferences from a custom folder or URL
 
 ### Manual
 - scm breeze: `https://github.com/scmbreeze/scm_breeze#installation`
@@ -19,8 +17,7 @@
 - snazzy colors: `https://github.com/sindresorhus/iterm2-snazzy`
 
 ### Neovim
-- Add `source ~/.cfg/nvimrc` to `~/.config/nvim/init.vim`
-- `ln -s ~/.cfg/ftplugin` in `~/.config/nvim`
+`bash vimSetup.sh`
 
 ### Tmux
 - tpm: `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
