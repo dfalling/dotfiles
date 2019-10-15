@@ -16,11 +16,5 @@
 - Inconsolata font: `http://levien.com/type/myfonts/inconsolata.html`
 - snazzy colors: `https://github.com/sindresorhus/iterm2-snazzy`
 
-### Neovim
-`bash vimSetup.sh`
-
-### Tmux
-- tpm: `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-
-### Config files
-- symlink gitconfig, gitignore, tmux.conf
+### Setup Script
+`bash setup.sh`
