@@ -33,7 +33,8 @@ Plug 'ervandew/supertab'
 Plug 'tpope/vim-abolish'
 " show number beside tab name
 Plug 'mkitt/tabline.vim'
-
+" yesssssss
+Plug 'liuchengxu/vim-which-key'
 " reason support
 Plug 'reasonml-editor/vim-reason-plus'
 " elixir support

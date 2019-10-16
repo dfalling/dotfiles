@@ -3,6 +3,7 @@ source ~/.cfg/nvim/styling.vimrc
 source ~/.cfg/nvim/coc.vimrc
 source ~/.cfg/nvim/search.vimrc
 source ~/.cfg/nvim/indentation.vimrc
+source ~/.cfg/nvim/whichKey.vimrc
 
 " functions
 source ~/.cfg/nvim/fNumberToggle.vimrc
