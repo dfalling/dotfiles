@@ -1,9 +1,10 @@
 source ~/.cfg/nvim/plugins.vimrc
+source ~/.cfg/nvim/whichKey.vimrc
 source ~/.cfg/nvim/styling.vimrc
 source ~/.cfg/nvim/coc.vimrc
 source ~/.cfg/nvim/search.vimrc
 source ~/.cfg/nvim/indentation.vimrc
-source ~/.cfg/nvim/whichKey.vimrc
+source ~/.cfg/nvim/ranger.vimrc
 
 " functions
 source ~/.cfg/nvim/fNumberToggle.vimrc

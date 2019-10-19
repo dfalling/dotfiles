@@ -17,8 +17,6 @@ Plug 'tpope/vim-surround'
 " theme
 Plug 'joshdick/onedark.vim'
 " netrw tweaks: - to hop to current path
-Plug 'tpope/vim-vinegar'
-" highlight search replace changes while typing
 Plug 'osyo-manga/vim-over'
 " show count in gutter for git differences
 Plug 'mhinz/vim-signify'
@@ -48,8 +46,11 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 " yaml
 Plug 'stephpy/vim-yaml'
-" many others...
+" many other syntaxes
 Plug 'sheerun/vim-polyglot'
+" ranger
+Plug 'rbgrouleff/bclose.vim'
+Plug 'francoiscabrol/ranger.vim'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
