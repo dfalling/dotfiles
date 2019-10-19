@@ -6,10 +6,6 @@ Plug 'jaxbot/semantic-highlight.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " status bar
 Plug 'vim-airline/vim-airline'
-" git plugin
-" I haven't really been using fugitive at all, disabling to see if I miss
-" it...
-" Plug 'tpope/vim-fugitive'
 " quickly comment lines
 Plug 'scrooloose/nerdcommenter'
 " easily change surroundings with cs
