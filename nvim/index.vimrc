@@ -46,9 +46,6 @@ set completeopt-=preview
 :set number
 :set rnu
 
-" Show fzf buffers after leader-b
-nnoremap <Leader>b :Buffers<CR>
-
 
 " PLUGINS
 
