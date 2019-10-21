@@ -1,16 +1,16 @@
-source ~/.cfg/nvim/plugins.vimrc
-source ~/.cfg/nvim/whichKey.vimrc
-source ~/.cfg/nvim/styling.vimrc
-source ~/.cfg/nvim/coc.vimrc
-source ~/.cfg/nvim/search.vimrc
-source ~/.cfg/nvim/indentation.vimrc
-source ~/.cfg/nvim/ranger.vimrc
+source ~/.cfg/nvim/plugins.vim
+source ~/.cfg/nvim/whichKey.vim
+source ~/.cfg/nvim/styling.vim
+source ~/.cfg/nvim/coc.vim
+source ~/.cfg/nvim/search.vim
+source ~/.cfg/nvim/indentation.vim
+source ~/.cfg/nvim/ranger.vim
 
 " functions
-source ~/.cfg/nvim/fNumberToggle.vimrc
-source ~/.cfg/nvim/fNewLines.vimrc
-source ~/.cfg/nvim/fDuplicateWindow.vimrc
-source ~/.cfg/nvim/fToggleWhitespace.vimrc
+source ~/.cfg/nvim/fNumberToggle.vim
+source ~/.cfg/nvim/fNewLines.vim
+source ~/.cfg/nvim/fDuplicateWindow.vim
+source ~/.cfg/nvim/fToggleWhitespace.vim
 
 
 " map space to :
