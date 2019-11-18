@@ -1,13 +1,20 @@
 {
   "languageserver": {
-     "reason": {
+    "reason": {
       "command": "reason-language-server",
       "filetypes": ["reason"]
-     },
-     "elixirLS": {
+    },
+    "elixirLS": {
       "command": "/Users/dfalling/Code/elixir-ls/rel/language_server.sh",
       "filetypes": ["elixir", "eelixir"]
-     }
+    }
   },
-  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "reason", "elixir", "typescript", "typescriptreact"]
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "Markdown",
+    "reason",
+    "elixir",
+    "typescript",
+    "typescriptreact"
+  ]
 }

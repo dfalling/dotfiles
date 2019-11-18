@@ -47,7 +47,6 @@ set completeopt-=preview
 :set number
 :set rnu
 
-
 " PLUGINS
 
 " nerdcommenter
