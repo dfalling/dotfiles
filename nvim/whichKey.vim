@@ -45,3 +45,10 @@ let g:which_key_map.w = {
       \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
       \ '?' : ['Windows'    , 'fzf-window']            ,
       \ }
+
+
+let g:which_key_map.s = {
+      \ 'name' : '+session' ,
+      \ 'w' : [':mksession! ~/.vim.session'        , 'write']  ,
+      \ 'r' : [':source ~/.vim.session'        , 'read']       ,
+      \ }
