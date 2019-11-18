@@ -47,6 +47,8 @@ Plug 'sheerun/vim-polyglot'
 " ranger
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
+" smooth scrolling
+Plug 'psliwka/vim-smoothie'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
