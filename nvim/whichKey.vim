@@ -19,6 +19,8 @@ let g:which_key_map.b = {
       \ '?' : ['Buffers'   , 'fzf-buffer']      ,
       \ }
 
+nnoremap <silent> <leader>oq  :copen<CR>
+nnoremap <silent> <leader>ol  :lopen<CR>
 let g:which_key_map.o = {
       \ 'name' : '+open',
       \ 'q' : 'open-quickfix'    ,
@@ -51,4 +53,11 @@ let g:which_key_map.s = {
       \ 'name' : '+session' ,
       \ 'w' : [':mksession! ~/.vim.session'        , 'write']  ,
       \ 'r' : [':source ~/.vim.session'        , 'read']       ,
+      \ }
+
+
+let g:which_key_map.t = {
+      \ 'name' : '+tabs' ,
+      \ 'n' : [':tabnew'                      , 'new']        ,
+      \ 'd' : [':call DuplicateWindow()<cr>'  , 'duplicate']  ,
       \ }
