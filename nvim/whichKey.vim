@@ -16,6 +16,7 @@ let g:which_key_map.b = {
       \ 'l' : ['blast'     , 'last-buffer']     ,
       \ 'n' : ['bnext'     , 'next-buffer']     ,
       \ 'p' : ['bprevious' , 'previous-buffer'] ,
+      \ 'x' : [':%bd|e#' , 'close-all'] ,
       \ '?' : ['Buffers'   , 'fzf-buffer']      ,
       \ }
 
