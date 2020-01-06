@@ -12,7 +12,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 " theme
 Plug 'joshdick/onedark.vim'
-" netrw tweaks: - to hop to current path
+" visual find/replace
 Plug 'osyo-manga/vim-over'
 " show count in gutter for git differences
 Plug 'mhinz/vim-signify'
@@ -27,7 +27,7 @@ Plug 'ervandew/supertab'
 Plug 'tpope/vim-abolish'
 " show number beside tab name
 Plug 'mkitt/tabline.vim'
-" yesssssss
+" visual display of leader keys
 Plug 'liuchengxu/vim-which-key'
 " reason support
 Plug 'reasonml-editor/vim-reason-plus'
