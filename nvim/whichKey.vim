@@ -12,11 +12,10 @@ let g:which_key_map.b = {
       \ '2' : ['b2'        , 'buffer 2']        ,
       \ 'd' : ['bd'        , 'delete-buffer']   ,
       \ 'f' : ['bfirst'    , 'first-buffer']    ,
-      \ 'h' : ['Startify'  , 'home-buffer']     ,
       \ 'l' : ['blast'     , 'last-buffer']     ,
       \ 'n' : ['bnext'     , 'next-buffer']     ,
       \ 'p' : ['bprevious' , 'previous-buffer'] ,
-      \ 'x' : [':%bd|e#' , 'close-all'] ,
+      \ 'x' : [':%bd|e#'   , 'close-all']       ,
       \ '?' : ['Buffers'   , 'fzf-buffer']      ,
       \ }
 
