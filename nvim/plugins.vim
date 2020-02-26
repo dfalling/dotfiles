@@ -8,8 +8,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 " quickly comment lines
 Plug 'scrooloose/nerdcommenter'
-" easily change surroundings with cs
-Plug 'tpope/vim-surround'
+" easily change surrounding braces, quotes, tags
+Plug 'machakann/vim-sandwich'
 " theme
 Plug 'joshdick/onedark.vim'
 " visual find/replace
