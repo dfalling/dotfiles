@@ -12,6 +12,8 @@
 	<false/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -969,6 +971,11 @@
 	<false/>
 	<key>NSScrollViewShouldScrollUnderTitlebar</key>
 	<false/>
+	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
+	<array>
+		<string>0.000000, 0.000000, 224.000000, 258.000000, NO, NO</string>
+		<string>0.000000, 259.000000, 224.000000, 48.000000, NO, NO</string>
+	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -1011,7 +1018,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>441 195 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>520 561 400 129 0 0 1440 877 </string>
+	<string>520 561 400 129 0 0 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -2756,17 +2763,25 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.3beta1</string>
-		<string>3.3.5beta3</string>
-		<string>3.3.0beta11</string>
-		<string>3.3.0beta16</string>
-		<string>3.3.4beta1</string>
-		<string>3.3.2beta2</string>
-		<string>3.3.0beta13</string>
-		<string>3.3.0beta10</string>
+		<string>3.3.8beta3</string>
+		<string>3.3.7beta1</string>
 		<string>3.3.2beta1</string>
-		<string>3.3.0beta15</string>
+		<string>3.3.7beta3</string>
+		<string>3.3.8beta5</string>
 		<string>3.3.3beta2</string>
 		<string>3.3.5beta1</string>
+		<string>3.3.0beta16</string>
+		<string>3.3.0beta15</string>
+		<string>3.3.5beta3</string>
+		<string>3.3.0beta13</string>
+		<string>3.3.7beta2</string>
+		<string>3.3.0beta11</string>
+		<string>3.3.0beta10</string>
+		<string>3.3.4beta1</string>
+		<string>3.3.2beta2</string>
+		<string>3.3.7beta4</string>
+		<string>3.3.8beta1</string>
+		<string>3.3.8beta4</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
@@ -2786,7 +2801,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>579470458.95199597</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>63</integer>
+	<integer>97</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3140,6 +3155,14 @@
 				<true/>
 				<key>name</key>
 				<string>style</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.jobPid</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3651,9 +3674,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-07T14:43:40Z</date>
+	<date>2020-02-13T03:38:46Z</date>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>2080000936</integer>
 	<key>SUUpdateRelaunchingMarker</key>
-	<false/>
+	<true/>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -3709,7 +3734,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.5beta3</string>
+	<string>3.3.8beta5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
