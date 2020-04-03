@@ -34,6 +34,7 @@ Plug 'reasonml-editor/vim-reason-plus'
 " elixir support
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
+Plug 'mhinz/vim-mix-format'
 " javascript support
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -49,6 +50,8 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
 " smooth scrolling
 Plug 'psliwka/vim-smoothie'
+" indention-based motions
+Plug 'jeetsukumaran/vim-indentwise'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
