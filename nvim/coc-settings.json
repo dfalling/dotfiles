@@ -15,6 +15,9 @@
     "reason",
     "elixir",
     "typescript",
-    "typescriptreact"
-  ]
+    "typescriptreact",
+    "python",
+    "javascript"
+  ],
+  "coc.preferences.extensionUpdateCheck": "daily"
 }
