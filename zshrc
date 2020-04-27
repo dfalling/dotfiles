@@ -50,6 +50,10 @@ alias gfp="git push --force-with-lease"
 alias gcp="git checkout master && git pull"
 alias grbc="git rebase --continue"
 alias gmt="git mergetool"
+alias gpr="git pull --rebase"
+
+# Changes to top-level directory of git repository.
+alias gtop="cd \$(git rev-parse --show-toplevel)"
 
 # ls aliases
 alias ls='ls -G'
