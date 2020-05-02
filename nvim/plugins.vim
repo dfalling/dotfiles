@@ -52,6 +52,8 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'psliwka/vim-smoothie'
 " indention-based motions
 Plug 'jeetsukumaran/vim-indentwise'
+" show register previews
+Plug 'junegunn/vim-peekaboo'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
