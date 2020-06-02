@@ -7,8 +7,6 @@ noremap <ESC> :noh<CR><ESC>
 " fuzzy finder config
 nnoremap <C-p> :FZF<CR>
 
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
-
 " vim-over helpers
 function! VisualFindAndReplace()
   :OverCommandLine%s/

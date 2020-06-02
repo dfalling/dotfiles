@@ -40,7 +40,15 @@ bindkey -v
 # CTRL-SPACE to accept autosuggest
 bindkey '^ ' autosuggest-accept
 
+# FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# switch fzf's default to use rg
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
+# use new fzf default as ctrl-t shortcut
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# larger fzf, show preview
+export FZF_DEFAULT_OPTS='--height 96% --reverse --preview "cat {}"'
 
 [ -s "/Users/dfalling/.scm_breeze/scm_breeze.sh" ] && source "/Users/dfalling/.scm_breeze/scm_breeze.sh"
 
