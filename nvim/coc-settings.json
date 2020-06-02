@@ -1,9 +1,5 @@
 {
   "languageserver": {
-    "reason": {
-      "command": "reason-language-server",
-      "filetypes": ["reason"]
-    },
     "elixirLS": {
       "command": "/Users/dfalling/Code/elixir-ls/rel/language_server.sh",
       "filetypes": ["elixir", "eelixir"]
