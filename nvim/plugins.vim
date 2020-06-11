@@ -33,7 +33,7 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'reasonml-editor/vim-reason-plus'
 " elixir support
 Plug 'elixir-lang/vim-elixir'
-Plug 'slashmili/alchemist.vim'
+" Plug 'slashmili/alchemist.vim'
 Plug 'mhinz/vim-mix-format'
 " javascript support
 Plug 'pangloss/vim-javascript'

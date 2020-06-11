@@ -1,10 +1,4 @@
 {
-  "languageserver": {
-    "elixirLS": {
-      "command": "/Users/dfalling/Code/elixir-ls/rel/language_server.sh",
-      "filetypes": ["elixir", "eelixir"]
-    }
-  },
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "Markdown",
