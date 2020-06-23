@@ -5,7 +5,7 @@
 noremap <ESC> :noh<CR><ESC>
 
 " fuzzy finder config
-nnoremap <C-p> :FZF<CR>
+nnoremap <C-p> :Files<CR>
 
 " vim-over helpers
 function! VisualFindAndReplace()
@@ -19,19 +19,11 @@ endfunction
 nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
 xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
 
-" add Rg ripgrep command
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
 
-" Gfp shortcut to show gitfiles with preview
-command! -bang -nargs=* Gfp call fzf#vim#gitfiles('', fzf#vim#with_preview('right'))
-
-" Ag command to show silver searcher omitting file names from search
-command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+" Always enable preview window on the right with 60% width
+let g:fzf_preview_window = 'right:60%'
 
 " remove delay going to escape http://www.johnhawthorn.com/2012/09/vi-escape-delays/
 set timeoutlen=1000 ttimeoutlen=0
