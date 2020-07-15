@@ -9,5 +9,6 @@
     "python",
     "javascript"
   ],
-  "coc.preferences.extensionUpdateCheck": "daily"
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "elixir.pathToElixirLS": "~/Code/elixir-ls/release/language_server.sh"
 }
