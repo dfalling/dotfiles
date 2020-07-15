@@ -43,3 +43,9 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" Fix issue with floating COC windows blending in with background
+hi CocFloating guibg=#282a36
+hi CocInfoFloat guibg=#282a36
+hi CocWarningFloat guibg=#282a36
+hi CocErrorFloat guibg=#282a36
