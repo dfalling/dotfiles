@@ -61,4 +61,6 @@ let g:which_key_map.t = {
       \ 'name' : '+tabs' ,
       \ 'n' : [':tabnew'                      , 'new']        ,
       \ 'd' : [':call DuplicateWindow()<cr>'  , 'duplicate']  ,
+      \ 'r' : [':.+1,$tabdo :tabc'            , 'close-tabs-to-the-right']  ,
+      \ 'o' : [':tabo'                        , 'close-other-tabs']  ,
       \ }
