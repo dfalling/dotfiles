@@ -963,6 +963,8 @@
 	<string>~/.cfg</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
+	<key>NSOverlayScrollersFallBackForAccessoryViews</key>
+	<false/>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -1017,6 +1019,8 @@
 	</dict>
 	<key>NSWindow Frame Preferences</key>
 	<string>441 195 606 456 0 0 1440 877 </string>
+	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
+	<string>412 527 616 174 0 0 1440 877 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>520 561 400 129 0 0 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -2762,6 +2766,8 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.12beta3</string>
+		<string>3.3.12beta1</string>
 		<string>3.3.3beta1</string>
 		<string>3.3.8beta3</string>
 		<string>3.3.7beta1</string>
@@ -2787,6 +2793,8 @@
 		<string>3.3.10beta2</string>
 		<string>3.3.10beta3</string>
 		<string>3.3.10beta4</string>
+		<string>3.3.11beta1</string>
+		<string>3.4.0beta4</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
@@ -2801,12 +2809,16 @@
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
+	<key>NoSyncIgnoreSystemWindowRestoration</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>0ED2EA09-7038-48FE-8178-17B4B1C2FFC6</string>
+	<key>NoSyncLastOSVersion</key>
+	<string>Version 10.15.6 (Build 19G2021)</string>
 	<key>NoSyncLastTipTime</key>
 	<real>579470458.95199597</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>118</integer>
+	<integer>180</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2940,6 +2952,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>selectionLength</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>path</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -2959,6 +2979,14 @@
 				<string>triggerName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>parentSession</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -3077,6 +3105,14 @@
 				<true/>
 				<key>name</key>
 				<string>tmuxStatusLeft</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>selection</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3670,18 +3706,20 @@
 	<integer>3</integer>
 	<key>RunJobsInServers</key>
 	<false/>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing_new.xml?shard=21</string>
+	<string>https://iterm2.com/appcasts/testing_modern.xml?shard=21</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-10T14:55:03Z</date>
+	<date>2020-09-25T01:37:43Z</date>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>365498534</integer>
+	<integer>2403409660</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -3738,10 +3776,12 @@
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.10beta4</string>
+	<string>3.4.0beta4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
