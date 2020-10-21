@@ -12,6 +12,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'machakann/vim-sandwich'
 " theme
 Plug 'joshdick/onedark.vim'
+Plug 'altercation/vim-colors-solarized'
 " visual find/replace
 Plug 'osyo-manga/vim-over'
 " show count in gutter for git differences
