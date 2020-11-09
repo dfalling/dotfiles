@@ -31,6 +31,7 @@ Plug 'mkitt/tabline.vim'
 Plug 'liuchengxu/vim-which-key'
 " reason support
 Plug 'reasonml-editor/vim-reason-plus'
+Plug 'amiralies/vim-rescript'
 " elixir support
 Plug 'elixir-lang/vim-elixir'
 " Plug 'slashmili/alchemist.vim'
