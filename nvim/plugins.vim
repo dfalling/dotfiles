@@ -11,7 +11,7 @@ Plug 'scrooloose/nerdcommenter'
 " easily change surrounding braces, quotes, tags
 Plug 'machakann/vim-sandwich'
 " theme
-Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
 " visual find/replace
 Plug 'osyo-manga/vim-over'
 " show count in gutter for git differences
@@ -59,7 +59,6 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'kyazdani42/nvim-web-devicons'
 " treesitter syntax rendering
 Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'romgrk/barbar.nvim'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.

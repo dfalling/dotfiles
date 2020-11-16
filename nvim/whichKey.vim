@@ -8,14 +8,13 @@ let g:which_key_map =  {}
 
 let g:which_key_map.b = {
       \ 'name' : '+buffer'  ,
-      \ 'd' : ['BufferClose', 'delete-buffer']   ,
+      \ 'd' : ['bd'         , 'delete-buffer']   ,
       \ 'f' : ['bfirst'     , 'first-buffer']    ,
       \ 'l' : ['blast'      , 'last-buffer']     ,
       \ 'n' : ['bnext'      , 'next-buffer']     ,
       \ 'p' : ['bprevious'  , 'previous-buffer'] ,
       \ 'x' : [':%bd|e#'    , 'close-all']       ,
       \ '?' : ['Buffers'    , 'fzf-buffer']      ,
-      \ 'j' : ['BufferPick' , 'pick']      ,
       \ }
 
 nnoremap <silent> <leader>oq  :copen<CR>
@@ -62,4 +61,11 @@ let g:which_key_map.t = {
       \ 'd' : [':call DuplicateWindow()<cr>'  , 'duplicate']  ,
       \ 'r' : [':.+1,$tabdo :tabc'            , 'close-tabs-to-the-right']  ,
       \ 'o' : [':tabo'                        , 'close-other-tabs']  ,
+      \ }
+
+
+let g:which_key_map.x = {
+      \ 'name' : '+colors' ,
+      \ 'l' : [':set background=light'        , 'light']  ,
+      \ 'd' : [':set background=dark'         , 'dark']   ,
       \ }

@@ -57,6 +57,3 @@ let g:NERDSpaceDelims = 1
 
 " match tag always
 let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascript.jsx': 1 }
-
-set encoding=utf-8
-let g:airline_powerline_fonts = 1

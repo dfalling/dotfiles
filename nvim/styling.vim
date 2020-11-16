@@ -3,7 +3,7 @@ if (has("termguicolors"))
 endif
 
 syntax on
-colorscheme onedark
+colorscheme one
 
 " highlight current line
 set cursorline
