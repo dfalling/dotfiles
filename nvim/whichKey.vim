@@ -7,16 +7,15 @@ set timeoutlen=500
 let g:which_key_map =  {}
 
 let g:which_key_map.b = {
-      \ 'name' : '+buffer' ,
-      \ '1' : ['b1'        , 'buffer 1']        ,
-      \ '2' : ['b2'        , 'buffer 2']        ,
-      \ 'd' : ['bd'        , 'delete-buffer']   ,
-      \ 'f' : ['bfirst'    , 'first-buffer']    ,
-      \ 'l' : ['blast'     , 'last-buffer']     ,
-      \ 'n' : ['bnext'     , 'next-buffer']     ,
-      \ 'p' : ['bprevious' , 'previous-buffer'] ,
-      \ 'x' : [':%bd|e#'   , 'close-all']       ,
-      \ '?' : ['Buffers'   , 'fzf-buffer']      ,
+      \ 'name' : '+buffer'  ,
+      \ 'd' : ['BufferClose', 'delete-buffer']   ,
+      \ 'f' : ['bfirst'     , 'first-buffer']    ,
+      \ 'l' : ['blast'      , 'last-buffer']     ,
+      \ 'n' : ['bnext'      , 'next-buffer']     ,
+      \ 'p' : ['bprevious'  , 'previous-buffer'] ,
+      \ 'x' : [':%bd|e#'    , 'close-all']       ,
+      \ '?' : ['Buffers'    , 'fzf-buffer']      ,
+      \ 'j' : ['BufferPick' , 'pick']      ,
       \ }
 
 nnoremap <silent> <leader>oq  :copen<CR>
@@ -46,7 +45,7 @@ let g:which_key_map.w = {
       \ 's' : ['<C-W>s'     , 'split-window-below']    ,
       \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
       \ '?' : ['Windows'    , 'fzf-window']            ,
-      \ 'x' : [':only'    , 'close-other-windows']            ,
+      \ 'x' : [':only'      , 'close-other-windows']   ,
       \ }
 
 

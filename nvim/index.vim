@@ -6,6 +6,7 @@ source ~/.cfg/nvim/search.vim
 source ~/.cfg/nvim/indentation.vim
 source ~/.cfg/nvim/ranger.vim
 source ~/.cfg/nvim/polyglot.vim
+source ~/.cfg/nvim/treeSitter.vim
 
 " functions
 source ~/.cfg/nvim/fNumberToggle.vim
@@ -26,7 +27,7 @@ let mapleader=","
 nnoremap Q <nop>
 
 " enable mouse
-" set mouse=a
+set mouse=a
 
 " enable system clipboard
 set clipboard+=unnamedplus
@@ -56,3 +57,6 @@ let g:NERDSpaceDelims = 1
 
 " match tag always
 let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascript.jsx': 1 }
+
+set encoding=utf-8
+let g:airline_powerline_fonts = 1

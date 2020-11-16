@@ -13,6 +13,7 @@
 - scm breeze: `https://github.com/scmbreeze/scm_breeze#installation`
 - Inconsolata font: `http://levien.com/type/myfonts/inconsolata.html`
 - snazzy colors: `https://github.com/sindresorhus/iterm2-snazzy`
+- Nerd Fonts: `https://www.nerdfonts.com/`
 
 ### Setup Script
 `bash setup.sh`
