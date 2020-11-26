@@ -31,7 +31,7 @@ Plug 'mkitt/tabline.vim'
 Plug 'liuchengxu/vim-which-key'
 " reason support
 Plug 'reasonml-editor/vim-reason-plus'
-Plug 'amiralies/vim-rescript'
+Plug 'rescript-lang/vim-rescript'
 " elixir support
 Plug 'elixir-lang/vim-elixir'
 " Plug 'slashmili/alchemist.vim'
@@ -45,6 +45,8 @@ Plug 'peitalin/vim-jsx-typescript'
 " yaml
 Plug 'stephpy/vim-yaml'
 " many other syntaxes
+" polyglot wants settings defined before loading
+source ~/.cfg/nvim/polyglot.vim
 Plug 'sheerun/vim-polyglot'
 " ranger
 Plug 'rbgrouleff/bclose.vim'
@@ -57,8 +59,6 @@ Plug 'jeetsukumaran/vim-indentwise'
 Plug 'junegunn/vim-peekaboo'
 " tab bar
 Plug 'kyazdani42/nvim-web-devicons'
-" treesitter syntax rendering
-Plug 'nvim-treesitter/nvim-treesitter'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
