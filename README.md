@@ -15,5 +15,12 @@
 - snazzy colors: `https://github.com/sindresorhus/iterm2-snazzy`
 - Nerd Fonts: `https://www.nerdfonts.com/`
 
+
+Neovim Nightly
+```
+curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz
+tar xzvf nvim-macos.tar.gz
+```
+
 ### Setup Script
 `bash setup.sh`
