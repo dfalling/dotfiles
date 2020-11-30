@@ -21,7 +21,3 @@ highlight Comment guifg=#8899BB
 
 " different selection color
 highlight Visual  guibg=#444444 gui=none
-
-" disable background color
-highlight Normal guibg=none
-highlight NonText guibg=none
