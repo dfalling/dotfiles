@@ -72,6 +72,10 @@ alias vim=nvim
 # https://github.com/Homebrew/homebrew-core/issues/41139
 export LC_ALL=en_US.UTF-8
 
+# set bat theme to one that works well in light and dark schemes
+export BAT_THEME="TwoDark"
+export BAT_STYLE="numbers"
+
 ##############################################################################
 # History Configuration
 ##############################################################################
