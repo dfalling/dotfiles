@@ -57,8 +57,6 @@ Plug 'psliwka/vim-smoothie'
 Plug 'jeetsukumaran/vim-indentwise'
 " show register previews
 Plug 'junegunn/vim-peekaboo'
-" tab bar
-Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
