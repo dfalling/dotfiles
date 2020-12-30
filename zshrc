@@ -53,7 +53,7 @@ export FZF_CTRL_T_OPTS=' --preview "bat --style=numbers --color=always --line-ra
 # more git aliases in addition to scm breeze
 alias gpsu="git push -u origin HEAD"
 alias gfp="git push --force-with-lease"
-alias gcp="git checkout master && git pull"
+alias gcp="git checkout main && git pull"
 alias grbc="git rebase --continue"
 alias gmt="git mergetool"
 alias gpr="git pull --rebase"
