@@ -57,6 +57,8 @@ Plug 'psliwka/vim-smoothie'
 Plug 'jeetsukumaran/vim-indentwise'
 " show register previews
 Plug 'junegunn/vim-peekaboo'
+" for aligning text (eg trailing comments) on multiple lines
+Plug 'godlygeek/tabular'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
