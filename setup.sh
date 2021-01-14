@@ -1,4 +1,6 @@
 # vim setup
+mkdir ~/.config
+mkdir ~/.config/nvim
 echo "source ~/.cfg/nvim/index.vim" > ~/.config/nvim/init.vim
 ln -s ~/.cfg/nvim/ftplugin ~/.config/nvim/
 ln -s ~/.cfg/nvim/coc-settings.json ~/.config/nvim/
