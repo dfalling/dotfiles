@@ -1,10 +1,10 @@
 ### Requirements
 - brew install tmux
-- brew install neovim/neovim/neovim
 - brew install zplug
 - brew install ripgrep
 - brew install tldr
 - brew install direnv
+- brew install gnupg
 
 ### iTerm
 - General>Preferences: Load preferences from a custom folder or URL
@@ -15,12 +15,23 @@
 - snazzy colors: `https://github.com/sindresorhus/iterm2-snazzy`
 - Nerd Fonts: `https://www.nerdfonts.com/`
 
-
-Neovim Nightly
-```
-curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz
-tar xzvf nvim-macos.tar.gz
-```
+### vim-plug
+https://github.com/junegunn/vim-plug
 
 ### Setup Script
 `bash setup.sh`
+
+
+### asdf
+
+```bash
+brew install asdf
+asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf plugin-add python
+```
+
+### Neovim
+- brew install neovim/neovim/neovim
+- pip install neovim
