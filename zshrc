@@ -88,3 +88,5 @@ setopt    sharehistory      #Share history across terminals
 setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
 
 eval "$(direnv hook zsh)"
+
+. /usr/local/opt/asdf/asdf.sh
