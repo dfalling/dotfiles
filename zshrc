@@ -58,9 +58,24 @@ alias grbc="git rebase --continue"
 alias gmt="git mergetool"
 alias gpr="git pull --rebase"
 alias gdtm="git difftool master..."
+alias gclean="git branch --merged main | grep -v "\* main" | xargs -n 1 git branch -d"
 
 # Changes to top-level directory of git repository.
 alias gtop="cd \$(git rev-parse --show-toplevel)"
+
+# visual fzf-filterable viewer for git commit history
+# https://gist.github.com/junegunn/f4fca918e937e6bf5bad
+git-commit-show () 
+{
+  git log --graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"  | \
+   fzf --ansi --no-sort --reverse --tiebreak=index --preview \
+   'f() { set -- $(echo -- "$@" | grep -o "[a-f0-9]\{7\}"); [ $# -eq 0 ] || git show --color=always $1 ; }; f {}' \
+   --bind "j:down,k:up,alt-j:preview-down,alt-k:preview-up,ctrl-f:preview-page-down,ctrl-b:preview-page-up,q:abort,ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF" --preview-window=right:60%
+}
 
 # ls aliases
 alias ls='ls -G'
@@ -90,3 +105,5 @@ setopt    incappendhistory  #Immediately append to the history file, not just wh
 eval "$(direnv hook zsh)"
 
 . /usr/local/opt/asdf/asdf.sh
+
+if [ -e /Users/dfalling/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/dfalling/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
