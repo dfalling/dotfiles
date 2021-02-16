@@ -10,7 +10,6 @@
     "javascript"
   ],
   "coc.preferences.extensionUpdateCheck": "daily",
-  "elixir.pathToElixirLS": "~/Code/elixir-ls/release/language_server.sh",
   "diagnostic-languageserver.filetypes": {
     "elixir": ["mix_credo", "mix_credo_compile"],
     "eelixir": ["mix_credo", "mix_credo_compile"]
@@ -18,7 +17,7 @@
   "languageserver": {
     "rescript": {
       "enable": true,
-      "module": "~/.config/nvim/plugged/vim-rescript/rescript-vscode-1.0.0/extension/server/out/server.js",
+      "module": "~/.vim/plugged/vim-rescript/rescript-vscode/extension/server/out/server.js",
       "args": ["--node-ipc"],
       "filetypes": ["rescript"],
       "rootPatterns": ["bsconfig.json"]
