@@ -58,7 +58,6 @@ alias grbc="git rebase --continue"
 alias gmt="git mergetool"
 alias gpr="git pull --rebase"
 alias gdtm="git difftool master..."
-alias gclean="git branch --merged main | grep -v "\* main" | xargs -n 1 git branch -d"
 
 # Changes to top-level directory of git repository.
 alias gtop="cd \$(git rev-parse --show-toplevel)"
