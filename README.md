@@ -5,6 +5,7 @@
 - brew install tldr
 - brew install direnv
 - brew install gnupg
+- brew install bat
 
 ### iTerm
 - General>Preferences: Load preferences from a custom folder or URL
