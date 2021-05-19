@@ -789,7 +789,7 @@
 		</dict>
 	</dict>
 	<key>Default Bookmark Guid</key>
-	<string>CE9E0380-89AF-4AE0-8C24-89EB3FC633AA</string>
+	<string>9F8D2BBD-D141-44F2-B650-DA90DCFBBB02</string>
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
@@ -918,7 +918,7 @@
 	<key>HideMenuBarInFullscreen</key>
 	<true/>
 	<key>HideScrollbar</key>
-	<false/>
+	<true/>
 	<key>HideTab</key>
 	<true/>
 	<key>HighlightTabLabels</key>
