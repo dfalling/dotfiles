@@ -57,7 +57,7 @@ alias gcp="git checkout main && git pull"
 alias grbc="git rebase --continue"
 alias gmt="git mergetool"
 alias gpr="git pull --rebase"
-alias gdtm="git difftool master..."
+alias gdtm="git difftool main..."
 
 # Changes to top-level directory of git repository.
 alias gtop="cd \$(git rev-parse --show-toplevel)"
