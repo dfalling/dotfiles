@@ -5,6 +5,7 @@ source ~/.cfg/nvim/coc.vim
 source ~/.cfg/nvim/search.vim
 source ~/.cfg/nvim/indentation.vim
 source ~/.cfg/nvim/ranger.vim
+source ~/.cfg/nvim/treesitter.vim
 
 " functions
 source ~/.cfg/nvim/fNumberToggle.vim

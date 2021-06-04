@@ -5,7 +5,7 @@ Plug 'jaxbot/semantic-highlight.vim'
 " code linting, completion, formatting
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " status bar
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 " quickly comment lines
 Plug 'scrooloose/nerdcommenter'
 " easily change surrounding braces, quotes, tags
@@ -44,10 +44,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 " yaml
 Plug 'stephpy/vim-yaml'
-" many other syntaxes
-" polyglot wants settings defined before loading
-source ~/.cfg/nvim/polyglot.vim
-Plug 'sheerun/vim-polyglot'
 " ranger
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
@@ -59,6 +55,8 @@ Plug 'jeetsukumaran/vim-indentwise'
 Plug 'junegunn/vim-peekaboo'
 " for aligning text (eg trailing comments) on multiple lines
 Plug 'godlygeek/tabular'
+" tree sitter syntax formatting
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
