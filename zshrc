@@ -80,8 +80,6 @@ FZF-EOF" --preview-window=right:60%
 alias ls='ls -G'
 alias ll='ls -lG'
 
-alias vim=nvim
-
 # some homebrew apps complain about locale without this...
 # https://github.com/Homebrew/homebrew-core/issues/41139
 export LC_ALL=en_US.UTF-8
@@ -104,5 +102,3 @@ setopt    incappendhistory  #Immediately append to the history file, not just wh
 eval "$(direnv hook zsh)"
 
 . /usr/local/opt/asdf/asdf.sh
-
-if [ -e /Users/dfalling/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/dfalling/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
