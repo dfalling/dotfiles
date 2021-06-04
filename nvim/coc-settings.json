@@ -7,7 +7,8 @@
     "typescript",
     "typescriptreact",
     "python",
-    "javascript"
+    "javascript",
+    "rescript"
   ],
   "coc.preferences.extensionUpdateCheck": "daily",
   "diagnostic-languageserver.filetypes": {
@@ -17,7 +18,7 @@
   "languageserver": {
     "rescript": {
       "enable": true,
-      "module": "~/.vim/plugged/vim-rescript/rescript-vscode/extension/server/out/server.js",
+      "module": "~/.vim/plugged/vim-rescript/server/out/server.js",
       "args": ["--node-ipc"],
       "filetypes": ["rescript"],
       "rootPatterns": ["bsconfig.json"]
