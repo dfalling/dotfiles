@@ -4,7 +4,6 @@ source ~/.cfg/nvim/styling.vim
 source ~/.cfg/nvim/coc.vim
 source ~/.cfg/nvim/search.vim
 source ~/.cfg/nvim/indentation.vim
-source ~/.cfg/nvim/ranger.vim
 source ~/.cfg/nvim/treesitter.vim
 
 " functions
@@ -56,3 +55,10 @@ let g:NERDSpaceDelims = 1
 
 " match tag always
 let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascript.jsx': 1 }
+
+" enable status line
+lua << EOF
+require('lualine').setup {
+  options = {theme = 'onedark'}
+}
+EOF

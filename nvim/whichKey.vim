@@ -19,6 +19,8 @@ let g:which_key_map.b = {
 
 nnoremap <silent> <leader>oq  :copen<CR>
 nnoremap <silent> <leader>ol  :lopen<CR>
+nnoremap <silent> <leader>-  :NvimTreeFindFile<CR>
+nnoremap <silent> <leader>=  :NvimTreeToggle<CR>
 let g:which_key_map.o = {
       \ 'name' : '+open',
       \ 'q' : 'open-quickfix'    ,

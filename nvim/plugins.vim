@@ -5,7 +5,8 @@ Plug 'jaxbot/semantic-highlight.vim'
 " code linting, completion, formatting
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " status bar
-Plug 'itchyny/lightline.vim'
+Plug 'hoob3rt/lualine.nvim'
+Plug 'ryanoasis/vim-devicons'
 " quickly comment lines
 Plug 'scrooloose/nerdcommenter'
 " easily change surrounding braces, quotes, tags
@@ -18,9 +19,6 @@ Plug 'osyo-manga/vim-over'
 Plug 'mhinz/vim-signify'
 " Highlight matching tag
 Plug 'Valloric/MatchTagAlways'
-" fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 " use tab to complete autocompletions
 Plug 'ervandew/supertab'
 " case matching find/replace
@@ -30,7 +28,6 @@ Plug 'mkitt/tabline.vim'
 " visual display of leader keys
 Plug 'liuchengxu/vim-which-key'
 " reason support
-Plug 'reasonml-editor/vim-reason-plus'
 Plug 'rescript-lang/vim-rescript'
 " elixir support
 Plug 'elixir-lang/vim-elixir'
@@ -40,13 +37,10 @@ Plug 'mhinz/vim-mix-format'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 " typescript support
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'peitalin/vim-jsx-typescript'
 " yaml
 Plug 'stephpy/vim-yaml'
-" ranger
-Plug 'rbgrouleff/bclose.vim'
-Plug 'francoiscabrol/ranger.vim'
 " smooth scrolling
 Plug 'psliwka/vim-smoothie'
 " indention-based motions
@@ -57,6 +51,13 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'godlygeek/tabular'
 " tree sitter syntax formatting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" telescope searcher
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+" file tree
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
