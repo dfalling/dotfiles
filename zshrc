@@ -13,12 +13,6 @@ zplug "zsh-users/zsh-autosuggestions"
 # let zplug manage itself
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
-# enhancd - https://github.com/b4b4r07/enhancd
-zplug 'b4b4r07/enhancd', use:init.sh
-
-# bd to cd up directories https://github.com/Tarrasch/zsh-bd
-zplug 'Tarrasch/zsh-bd'
-
 # theme
 zplug mafredri/zsh-async, from:github
 zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme

@@ -7,6 +7,7 @@
 - brew install gnupg
 - brew install bat
 - brew install asdf
+- brew install zoxide
 
 ### iTerm
 - General>Preferences: Load preferences from a custom folder or URL
