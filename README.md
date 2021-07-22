@@ -6,14 +6,14 @@
 - brew install direnv
 - brew install gnupg
 - brew install bat
+- brew install asdf
 
 ### iTerm
 - General>Preferences: Load preferences from a custom folder or URL
 
 ### Manual
 - scm breeze: `https://github.com/scmbreeze/scm_breeze#installation`
-- Inconsolata font: `http://levien.com/type/myfonts/inconsolata.html`
-- snazzy colors: `https://github.com/sindresorhus/iterm2-snazzy`
+- iTerm colors: `https://iterm2colorschemes.com/`
 - Nerd Fonts: `https://www.nerdfonts.com/`
 
 ### vim-plug
@@ -26,7 +26,6 @@ https://github.com/junegunn/vim-plug
 ### asdf
 
 ```bash
-brew install asdf
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
 asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
