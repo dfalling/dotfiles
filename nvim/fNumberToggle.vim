@@ -8,4 +8,4 @@ function! NumberToggle()
 endfunc
 
 " toggle relative line numbers
-nnoremap <Leader>l :call NumberToggle()<cr>
+" mapped in whichKey

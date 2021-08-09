@@ -11,6 +11,7 @@ source ~/.cfg/nvim/fNumberToggle.vim
 source ~/.cfg/nvim/fNewLines.vim
 source ~/.cfg/nvim/fDuplicateWindow.vim
 source ~/.cfg/nvim/fToggleWhitespace.vim
+source ~/.cfg/nvim/fHighlightDuplicateLines.vim
 
 
 " map space to :

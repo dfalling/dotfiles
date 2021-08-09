@@ -7,7 +7,7 @@ set timeoutlen=500
 let g:which_key_map =  {}
 
 let g:which_key_map.b = {
-      \ 'name' : '+buffer'  ,
+      \ 'name' : 'buffer'  ,
       \ 'd' : ['bd'         , 'delete-buffer']   ,
       \ 'f' : ['bfirst'     , 'first-buffer']    ,
       \ 'l' : ['blast'      , 'last-buffer']     ,
@@ -22,13 +22,13 @@ nnoremap <silent> <leader>ol  :lopen<CR>
 nnoremap <silent> <leader>-  :NvimTreeFindFile<CR>
 nnoremap <silent> <leader>=  :NvimTreeToggle<CR>
 let g:which_key_map.o = {
-      \ 'name' : '+open',
+      \ 'name' : 'open',
       \ 'q' : 'open-quickfix'    ,
       \ 'l' : 'open-locationlist',
       \ }
 
 let g:which_key_map.w = {
-      \ 'name' : '+windows' ,
+      \ 'name' : 'windows' ,
       \ 'w' : ['<C-W>w'     , 'other-window']          ,
       \ 'd' : ['<C-W>c'     , 'delete-window']         ,
       \ '-' : ['<C-W>s'     , 'split-window-below']    ,
@@ -51,14 +51,14 @@ let g:which_key_map.w = {
 
 
 let g:which_key_map.s = {
-      \ 'name' : '+session' ,
+      \ 'name' : 'session' ,
       \ 'w' : [':mksession! ~/.vim.session'        , 'write']  ,
       \ 'r' : [':source ~/.vim.session'        , 'read']       ,
       \ }
 
 
 let g:which_key_map.t = {
-      \ 'name' : '+tabs' ,
+      \ 'name' : 'tabs' ,
       \ 'n' : [':tabnew'                      , 'new']        ,
       \ 'd' : [':call DuplicateWindow()<cr>'  , 'duplicate']  ,
       \ 'r' : [':.+1,$tabdo :tabc'            , 'close-tabs-to-the-right']  ,
@@ -67,7 +67,16 @@ let g:which_key_map.t = {
 
 
 let g:which_key_map.x = {
-      \ 'name' : '+colors' ,
+      \ 'name' : 'colors' ,
       \ 'l' : [':set background=light'        , 'light']  ,
       \ 'd' : [':set background=dark'         , 'dark']   ,
+      \ }
+
+
+let g:which_key_map.l = {
+      \ 'name' : 'lines' ,
+      \ 'b' : [':g/^$/d'                              , 'delete-blanks']            ,
+      \ ';' : [':call WhitespaceToggle()<cr>'         , 'whitespace-toggle']        ,
+      \ 'l' : [':call NumberToggle()<cr>'             , 'relative-numbers-toggle']  ,
+      \ 'd' : [':call HighlightDuplicateLines()'      , 'highlight-duplicates']     ,
       \ }

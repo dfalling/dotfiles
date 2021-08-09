@@ -3,4 +3,4 @@ function! WhitespaceToggle()
   :set list!
 endfunction
 
-nnoremap <Leader>; :call WhitespaceToggle()<cr>
+" Mapped in whichKey.vim
