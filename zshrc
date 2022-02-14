@@ -13,6 +13,9 @@ zplug "zsh-users/zsh-autosuggestions"
 # let zplug manage itself
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
+# autocomplete for yarn
+zplug "g-plane/zsh-yarn-autocompletions", hook-build:"./zplug.zsh", defer:2
+
 # theme
 zplug mafredri/zsh-async, from:github
 zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
@@ -48,6 +51,7 @@ export FZF_CTRL_T_OPTS=' --preview "bat --style=numbers --color=always --line-ra
 alias gpsu="git push -u origin HEAD"
 alias gfp="git push --force-with-lease"
 alias gcp="git checkout main && git pull"
+alias gcd="git checkout develop && git pull"
 alias grbc="git rebase --continue"
 alias gmt="git mergetool"
 alias gpr="git pull --rebase"
