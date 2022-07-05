@@ -4,7 +4,7 @@ source ~/.cfg/nvim/styling.vim
 source ~/.cfg/nvim/coc.vim
 source ~/.cfg/nvim/search.vim
 source ~/.cfg/nvim/indentation.vim
-source ~/.cfg/nvim/treesitter.vim
+" source ~/.cfg/nvim/treesitter.vim
 
 " functions
 source ~/.cfg/nvim/fNumberToggle.vim

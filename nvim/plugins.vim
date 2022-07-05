@@ -36,9 +36,6 @@ Plug 'mhinz/vim-mix-format'
 " javascript support
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-" typescript support
-" Plug 'leafgarland/typescript-vim'
-" Plug 'peitalin/vim-jsx-typescript'
 " yaml
 Plug 'stephpy/vim-yaml'
 " smooth scrolling
@@ -57,6 +54,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 " file tree
 Plug 'preservim/nerdtree'
+Plug 'github/copilot.vim'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
