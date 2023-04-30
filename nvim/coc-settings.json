@@ -15,13 +15,5 @@
     "elixir": ["mix_credo", "mix_credo_compile"],
     "eelixir": ["mix_credo", "mix_credo_compile"]
   },
-  "languageserver": {
-    "rescript": {
-      "enable": true,
-      "module": "~/.vim/plugged/vim-rescript/server/out/server.js",
-      "args": ["--node-ipc"],
-      "filetypes": ["rescript"],
-      "rootPatterns": ["bsconfig.json"]
-    }
-  }
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh"
 }
