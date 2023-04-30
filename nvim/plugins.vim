@@ -27,8 +27,6 @@ Plug 'tpope/vim-abolish'
 Plug 'mkitt/tabline.vim'
 " visual display of leader keys
 Plug 'liuchengxu/vim-which-key'
-" reason support
-Plug 'rescript-lang/vim-rescript'
 " elixir support
 Plug 'elixir-lang/vim-elixir'
 " Plug 'slashmili/alchemist.vim'
@@ -54,7 +52,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 " file tree
 Plug 'preservim/nerdtree'
+
 Plug 'github/copilot.vim'
+Plug 'f-person/auto-dark-mode.nvim'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.
