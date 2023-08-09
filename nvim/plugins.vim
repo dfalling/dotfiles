@@ -12,7 +12,7 @@ Plug 'scrooloose/nerdcommenter'
 " easily change surrounding braces, quotes, tags
 Plug 'machakann/vim-sandwich'
 " theme
-Plug 'rakr/vim-one'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 " visual find/replace
 Plug 'osyo-manga/vim-over'
 " show count in gutter for git differences
@@ -29,6 +29,7 @@ Plug 'mkitt/tabline.vim'
 Plug 'liuchengxu/vim-which-key'
 " elixir support
 Plug 'elixir-lang/vim-elixir'
+Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
 " Plug 'slashmili/alchemist.vim'
 Plug 'mhinz/vim-mix-format'
 " javascript support
@@ -55,6 +56,8 @@ Plug 'preservim/nerdtree'
 
 Plug 'github/copilot.vim'
 Plug 'f-person/auto-dark-mode.nvim'
+" helpers for working in unix/linux (eg delete, move, rename)
+Plug 'tpope/vim-eunuch'
 call plug#end()
 
 "Reload .vimrc (:so $MYVIMRC) and :PlugInstall to install plugins.

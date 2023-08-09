@@ -62,6 +62,6 @@ let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'javascript.jsx': 1 
 " enable status line
 lua << EOF
 require('lualine').setup {
-  options = {theme = 'one'}
+  options = {theme = 'catppuccin'}
 }
 EOF

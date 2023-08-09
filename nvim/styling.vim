@@ -1,7 +1,7 @@
 set termguicolors
 
 syntax on
-colorscheme one
+colorscheme catppuccin
 set background=light
 
 " highlight current line and column
