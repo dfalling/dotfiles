@@ -9,6 +9,8 @@
 - brew install asdf
 - brew install zoxide
 - brew install swiftdefaultappsprefpane
+- brew install --HEAD neovim
+- pip install neovim
 
 ### iTerm
 - General>Preferences: Load preferences from a custom folder or URL
@@ -24,7 +26,6 @@ https://github.com/junegunn/vim-plug
 ### Setup Script
 `bash setup.sh`
 
-
 ### asdf
 
 ```bash
@@ -33,7 +34,3 @@ asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
 asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
 asdf plugin-add python
 ```
-
-### Neovim
-- brew install neovim/neovim/neovim
-- pip install neovim
