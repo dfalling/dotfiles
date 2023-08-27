@@ -1,0 +1,8 @@
+require "user.options"
+require "user.plugins"
+require "user.colorscheme"
+require "user.lualine"
+require "user.autodarkmode"
+require "user.treesitter"
+require "user.telescope"
+require "user.languageserver"
