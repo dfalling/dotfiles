@@ -1,12 +1,33 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 require("lsp-format").setup {}
+
+-- lua
 require 'lspconfig'.lua_ls.setup {
+	settings = {
+		Lua = {
+			diagnostics = {
+				-- Get the language server to recognize the `vim` global
+				globals = {
+					'vim',
+					'require'
+				},
+			},
+			workspace = {
+				-- Make the server aware of Neovim runtime files
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+		},
+	},
 	on_attach = require("lsp-format").on_attach
 }
+
+-- typescript
 require("lspconfig").tsserver.setup {
 	on_attach = require("lsp-format").on_attach
 }
+
+-- elixir
 require('lspconfig').elixirls.setup {
 	cmd = { "/Users/dfalling/Code/elixir-ls/release/language_server.sh" },
 	on_attach = require("lsp-format").on_attach
