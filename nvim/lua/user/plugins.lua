@@ -53,7 +53,8 @@ return packer.startup(function(use)
         requires = {'liuchengxu/vim-which-key'}
     } -- visual display of leader keys
     use "hoob3rt/lualine.nvim" -- statusline
-    use {"williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig"} -- language server + installer
+    use "neovim/nvim-lspconfig" -- language server
+    use "lukas-reineke/lsp-format.nvim" -- format on save
     use {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.2',

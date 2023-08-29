@@ -84,20 +84,20 @@ _G.packer_plugins = {
     path = "/Users/dfalling/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  detectindent = {
+    loaded = true,
+    path = "/Users/dfalling/.local/share/nvim/site/pack/packer/start/detectindent",
+    url = "https://github.com/roryokane/detectindent"
+  },
+  ["lsp-format.nvim"] = {
+    loaded = true,
+    path = "/Users/dfalling/.local/share/nvim/site/pack/packer/start/lsp-format.nvim",
+    url = "https://github.com/lukas-reineke/lsp-format.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/dfalling/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
-  },
-  ["mason-lspconfig.nvim"] = {
-    loaded = true,
-    path = "/Users/dfalling/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
-    url = "https://github.com/williamboman/mason-lspconfig.nvim"
-  },
-  ["mason.nvim"] = {
-    loaded = true,
-    path = "/Users/dfalling/.local/share/nvim/site/pack/packer/start/mason.nvim",
-    url = "https://github.com/williamboman/mason.nvim"
   },
   nerdcommenter = {
     loaded = true,
@@ -118,6 +118,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dfalling/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-whichkey-setup.lua"] = {
+    loaded = true,
+    path = "/Users/dfalling/.local/share/nvim/site/pack/packer/start/nvim-whichkey-setup.lua",
+    url = "https://github.com/AckslD/nvim-whichkey-setup.lua"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -148,6 +153,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dfalling/.local/share/nvim/site/pack/packer/start/vim-elixir",
     url = "https://github.com/elixir-lang/vim-elixir"
+  },
+  ["vim-indentwise"] = {
+    loaded = true,
+    path = "/Users/dfalling/.local/share/nvim/site/pack/packer/start/vim-indentwise",
+    url = "https://github.com/jeetsukumaran/vim-indentwise"
   },
   ["vim-peekaboo"] = {
     loaded = true,
