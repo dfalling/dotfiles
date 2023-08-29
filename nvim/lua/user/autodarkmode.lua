@@ -1,4 +1,3 @@
-lua <<EOF
 local auto_dark_mode = require('auto-dark-mode')
 
 auto_dark_mode.setup({
@@ -11,4 +10,3 @@ auto_dark_mode.setup({
 	end,
 })
 auto_dark_mode.init()
-EOF
