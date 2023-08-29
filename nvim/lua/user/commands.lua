@@ -1,7 +1,7 @@
 -- function to duplicate current vim window
 function DuplicateWindow()
-    vim.cmd("sp")
-    vim.cmd("wincmd T")
+	vim.cmd("sp")
+	vim.cmd("wincmd T")
 end
 
 vim.cmd([[
@@ -27,4 +27,11 @@ vim.cmd([[
     endfunction
     nnoremap <silent> <expr> o <SID>NewLineInsertExpr(1, 'o')
     nnoremap <silent> <expr> O <SID>NewLineInsertExpr(1, 'O')
+]])
+
+vim.cmd([[
+	:set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+	function! WhitespaceToggle()
+	  :set list!
+	endfunction
 ]])
