@@ -2,7 +2,7 @@
 local lspconfig = require('lspconfig')
 require("lspconfig").tsserver.setup {}
 require('lspconfig').elixirls.setup {
-    cmd = {"~/Code/elixir-ls/release/language_server.sh"},
+    cmd = {"/Users/dfalling/Code/elixir-ls/release/language_server.sh"},
     on_attach = on_attach
 }
 
