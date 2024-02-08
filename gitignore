@@ -5,3 +5,4 @@
 .vscode
 .elixir_ls
 .vim
+*.orig

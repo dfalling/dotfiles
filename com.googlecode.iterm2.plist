@@ -1996,6 +1996,8 @@
 	<false/>
 	<key>TmuxDashboardLimit</key>
 	<integer>10</integer>
+	<key>TmuxUsesDedicatedProfile</key>
+	<false/>
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Profiles</string>
@@ -2010,6 +2012,8 @@
 	<true/>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
+	<key>UseTmuxStatusBar</key>
+	<false/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WebKitDefaultFontSize</key>

@@ -1,0 +1,31 @@
+{
+    "workspace.library": [
+        "/Users/dfalling/.config/nvim",
+        "/Users/dfalling/.local/share/nvim/site",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/auto-dark-mode.nvim",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/copilot.vim",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/detectindent",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/lsp-format.nvim",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/nerdcommenter",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/nvim",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/nvim-whichkey-setup.lua",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/packer.nvim",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/popup.nvim",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/vim-easymotion",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/vim-elixir",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/vim-indentwise",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/vim-peekaboo",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/vim-sandwich",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/vim-smoothie",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/vim-which-key",
+        "/opt/homebrew/Cellar/neovim/HEAD-19d7fb8/share/nvim/runtime",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/nvim/after",
+        "/Users/dfalling/.local/share/nvim/site/pack/packer/start/vim-sandwich/after",
+        "${3rd}/luassert/library"
+    ]
+}

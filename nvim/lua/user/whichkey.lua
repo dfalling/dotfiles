@@ -23,7 +23,8 @@ local keymap = {
 	s = {
 		name = '+whitespace',
 		t = { '<Cmd>call WhitespaceToggle()<CR>', 'toggle' }
-	}
+	},
+	["-"] = { ':Neotree<CR>', 'File sidebar' }
 }
 
 wk.register_keymap('leader', keymap)
