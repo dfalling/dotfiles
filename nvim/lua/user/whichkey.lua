@@ -1,12 +1,11 @@
-local wk = require('whichkey_setup')
+local wk = require("which-key")
 
-local keymap = {
-
+wk.register({
 	w = { ':w!<CR>', 'save file' }, -- set a single command and text
 	f = {                     -- set a nested structure
 		name = '+find',
 		b = { '<Cmd>Telescope buffers<CR>', 'buffers' },
-		f = { '<Cmd>Telescope find_files<CR>', 'files' },
+		f = { "<Cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>", 'files',  },
 		g = { '<Cmd>Telescope live_grep<CR>', 'file contents' },
 		h = { '<Cmd>Telescope help_tags<CR>', 'help tags' },
 		c = {
@@ -24,7 +23,4 @@ local keymap = {
 		name = '+whitespace',
 		t = { '<Cmd>call WhitespaceToggle()<CR>', 'toggle' }
 	},
-	["-"] = { ':Neotree<CR>', 'File sidebar' }
-}
-
-wk.register_keymap('leader', keymap)
+}, { prefix = "<leader>" })

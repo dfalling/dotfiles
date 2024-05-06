@@ -1,85 +1,87 @@
-local fn = vim.fn
-
--- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim",
-		install_path }
-	print "Installing packer close and reopen Neovim..."
-	vim.cmd [[packadd packer.nvim]]
+-- Install Lazy
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
+-- Install plugins
+require("lazy").setup({
+  -- An implementation of the Popup API from vim in Neovim
+  { "nvim-lua/popup.nvim" },
 
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-	return
-end
+  -- Vim motions on speed
+  { "easymotion/vim-easymotion" },
 
--- Have packer use a popup window
-packer.init {
-	display = {
-		open_fn = function()
-			return require("packer.util").float {
-				border = "rounded"
-			}
-		end
-	}
-}
+  -- toggle line comments
+  { "scrooloose/nerdcommenter" },
 
--- Install your plugins here
-return packer.startup(function(use)
-	-- My plugins here
-	use "wbthomason/packer.nvim"   -- Have packer manage itself
-	use "nvim-lua/popup.nvim"      -- An implementation of the Popup API from vim in Neovim
-	use "easymotion/vim-easymotion" -- Vim motions on speed
-	use "scrooloose/nerdcommenter" -- Vim plugin for intensely orgasmic commenting
-	use "machakann/vim-sandwich"   -- easily change surrounding braces, quotes, tags
-	use "catppuccin/nvim"          -- theme
-	use "psliwka/vim-smoothie"     -- smooth scrolling
-	use "junegunn/vim-peekaboo"    -- show register contents
-	use "github/copilot.vim"       -- github copilot
-	use "f-person/auto-dark-mode.nvim" -- auto dark mode
-	use "nvim-treesitter/nvim-treesitter" -- treesitter
-	use {
-		'AckslD/nvim-whichkey-setup.lua',
-		requires = { 'liuchengxu/vim-which-key' }
-	}                            -- visual display of leader keys
-	use "hoob3rt/lualine.nvim"   -- statusline
-	use "neovim/nvim-lspconfig"  -- language server
-	use "lukas-reineke/lsp-format.nvim" -- format on save
-	use "osyo-manga/vim-over" -- visual search and replace
-	use {
-		'nvim-telescope/telescope.nvim',
-		tag = '0.1.2',
-		requires = { { 'nvim-lua/plenary.nvim' } }
-	}                           -- fuzzy finder
-	use "jeetsukumaran/vim-indentwise" -- indentation based movements: move to different / same indention levels
-	use "roryokane/detectindent" -- detect indent settings. without this new lines have seemingly random indentation
+  -- easily change surrounding braces, quotes, tags
+  { "machakann/vim-sandwich" },
 
-	use "elixir-lang/vim-elixir" -- elixir syntax highlighting
+  -- theme
+  { "catppuccin/nvim" },
 
-	use {
-	  "nvim-neo-tree/neo-tree.nvim",
-	    branch = "v3.x",
-	    requires = { 
-	      "nvim-lua/plenary.nvim",
-	      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-	      "MunifTanjim/nui.nvim",
-	      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-	    }
-	  }
+  -- smooth scrolling
+  { "psliwka/vim-smoothie" },
 
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if PACKER_BOOTSTRAP then
-		require("packer").sync()
-	end
-end)
+  -- show register contents
+  { "junegunn/vim-peekaboo" },
+
+  -- github copilot
+  { "github/copilot.vim" },
+
+  -- auto dark mode
+  { "f-person/auto-dark-mode.nvim" },
+
+  -- treesitter
+  { "nvim-treesitter/nvim-treesitter" },
+
+  -- visual display of leader keys
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {}
+  },
+
+  -- statusline
+  { "hoob3rt/lualine.nvim" },
+
+  -- language server
+  { "neovim/nvim-lspconfig" },
+
+  -- format on save
+  { "lukas-reineke/lsp-format.nvim" },
+
+  -- visual search and replace
+  { "osyo-manga/vim-over" },
+
+  -- fuzzy finder
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.6',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+
+  -- indentation based movements: move to different / same indention levels
+  { "jeetsukumaran/vim-indentwise" },
+
+  -- detect indent settings. without this new lines have seemingly random indentation
+  { "roryokane/detectindent" },
+
+  -- elixir syntax highlighting
+  { "elixir-lang/vim-elixir" },
+
+  -- show lint warnings
+  { 'mfussenegger/nvim-lint' },
+})

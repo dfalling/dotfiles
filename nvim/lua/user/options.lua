@@ -32,8 +32,12 @@ vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
 
--- match indentation of previous line
-vim.opt.smartindent = true
+-- indentation
+vim.opt.tabstop = 2 
+vim.opt.softtabstop = 0 
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2 
+vim.opt.smarttab = true
 
 -- clear search highlight
 vim.api.nvim_set_keymap("n", "<ESC>", ":noh<CR><ESC>", {
