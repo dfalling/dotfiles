@@ -62,7 +62,44 @@ require("lazy").setup({
   { "neovim/nvim-lspconfig" },
 
   -- format on save
-  { "lukas-reineke/lsp-format.nvim" },
+  {
+    "stevearc/conform.nvim",
+    event = { "BufWritePre" },
+    cmd = { "ConformInfo" },
+    keys = {
+      {
+        -- Customize or remove this keymap to your liking
+        "<leader>ww",
+        function()
+          require("conform").format({ async = true, lsp_format = "fallback" })
+        end,
+        mode = "",
+        desc = "Format buffer",
+      },
+    },
+    -- Everything in opts will be passed to setup()
+    opts = {
+      -- Define your formatters
+      formatters_by_ft = {
+        elixir = { "mix" },
+        javascript = { "biome" },
+        typescript = { "biome" },
+      },
+      -- Set up format-on-save
+      format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
+    },
+    init = function()
+      -- If you want the formatexpr, here is the place to set it
+      vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = "*",
+        callback = function(args)
+          require("conform").format({ bufnr = args.buf })
+        end,
+      })
+    end,
+  },
 
   -- visual search and replace
   { "osyo-manga/vim-over" },
@@ -81,6 +118,26 @@ require("lazy").setup({
 
   -- elixir syntax highlighting
   { "elixir-lang/vim-elixir" },
+
+  -- elixir next language server
+  {
+    "elixir-tools/elixir-tools.nvim",
+    version = "*",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      local elixir = require("elixir")
+      local elixirls = require("elixir.elixirls")
+
+      elixir.setup {
+        nextls = {enable = true},
+        credo = {},
+        elixirls = {enable = false,}
+      }
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
 
   -- show lint warnings
   { 'mfussenegger/nvim-lint' },

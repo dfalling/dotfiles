@@ -1,29 +1,5 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-require("lsp-format").setup {}
-
--- elixir
-require('lspconfig').elixirls.setup {
-	cmd = { "/Users/dfalling/Code/elixir-ls/release/language_server.sh" },
-	on_attach = require("lsp-format").on_attach
-}
-
-local prettier = {
-    formatCommand = [[prettierd --stdin-filepath ${INPUT} ${--tab-width:tab_width}]],
-    formatStdin = true,
-}
-
-require("lspconfig").efm.setup {
-    on_attach = require("lsp-format").on_attach,
-    init_options = { documentFormatting = true },
-    settings = {
-        languages = {
-            typescript = { prettier },
-            javascript = { prettier },
-            yaml = { prettier },
-        },
-    },
-}
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -45,11 +21,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		local opts = {
 			buffer = ev.buf
 		}
-		vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+		--vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+		--vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 		vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-		vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-		vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+		--vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+		--vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
 		-- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
 		-- vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
 		-- vim.keymap.set('n', '<space>wl', function()
@@ -58,9 +34,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		-- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
 		-- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
 		-- vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-		vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-		-- vim.keymap.set('n', '<space>f', function()
-		-- vim.lsp.buf.format { async = true }
-		-- end, opts)
+		--vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 	end
 })
