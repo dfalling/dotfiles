@@ -130,7 +130,7 @@ require("lazy").setup({
 
       elixir.setup {
         nextls = {enable = true},
-        credo = {},
+        credo = {enable = false},
         elixirls = {enable = false,}
       }
     end,
