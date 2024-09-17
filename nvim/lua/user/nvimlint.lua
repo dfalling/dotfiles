@@ -1,5 +1,5 @@
 require('lint').linters_by_ft = {
-  markdown = {'vale',},
+  --markdown = {'vale',},
   elixir = {'credo',},
   javascript = { "biomejs" },
   typescript = { "biomejs" },
