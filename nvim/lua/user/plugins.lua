@@ -82,8 +82,9 @@ require("lazy").setup({
       -- Define your formatters
       formatters_by_ft = {
         elixir = { "mix" },
-        javascript = { "biome" },
-        typescript = { "biome" },
+        javascript = { "prettierd" },
+        typescript = { "prettierd" },
+        typescriptreact = { "prettierd" },
       },
       -- Set up format-on-save
       format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
@@ -141,4 +142,16 @@ require("lazy").setup({
 
   -- show lint warnings
   { 'mfussenegger/nvim-lint' },
+
+  { 'nanotee/zoxide.vim' },
+
+  -- typescript config
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
+
+  -- file browser
+  { 'nvim-tree/nvim-tree.lua' },
 })

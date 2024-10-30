@@ -1,10 +1,10 @@
 require('lint').linters_by_ft = {
   --markdown = {'vale',},
   elixir = {'credo',},
-  javascript = { "biomejs" },
-  typescript = { "biomejs" },
-  javascriptreact = { "biomejs" },
-  typescriptreact = { "biomejs" },
+  javascript = { "eslint" },
+  typescript = { "eslint" },
+  javascriptreact = { "eslint" },
+  typescriptreact = { "eslint" },
 }
 
 

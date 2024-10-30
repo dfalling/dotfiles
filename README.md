@@ -13,7 +13,7 @@
 - pip install neovim
 
 ### iTerm
-- General>Preferences: Load preferences from a custom folder or URL
+- General>Preferences>Settings: Load preferences from a custom folder or URL
 
 ### Manual
 - scm breeze: `https://github.com/scmbreeze/scm_breeze#installation`

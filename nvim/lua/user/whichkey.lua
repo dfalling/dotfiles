@@ -8,6 +8,7 @@ wk.register({
 		f = { "<Cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>", 'files',  },
 		g = { '<Cmd>Telescope live_grep<CR>', 'file contents' },
 		h = { '<Cmd>Telescope help_tags<CR>', 'help tags' },
+    r = { "<Cmd>lua require('telescope.builtin').resume()<CR>", 'resume search' },
 		c = {
 			name = '+commands',
 			c = { '<Cmd>Telescope commands<CR>', 'commands' },
@@ -23,4 +24,9 @@ wk.register({
 		name = '+whitespace',
 		t = { '<Cmd>call WhitespaceToggle()<CR>', 'toggle' }
 	},
+  x = { ':NvimTreeFindFile<CR>', 'explore'},
+  a = {
+    name = '+files',
+    c = { ':let @+ = expand("%")<CR>', 'copy' },
+  },
 }, { prefix = "<leader>" })
