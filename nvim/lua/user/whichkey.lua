@@ -3,9 +3,11 @@ wk.setup({})
 wk.add({
   { "<leader>a", group = "files" },
   { "<leader>ac", ':let @+ = expand("%")<CR>', desc = "copy path" },
-  { "<leader>c", group = "comment" },
-  { "<leader>ax", ":NvimTreeFindFile<CR>", desc = "explore" },
   { "<leader>ad", ":call delete(expand('%')) | bdelete!", desc = "delete" },
+  { "<leader>ae", ":NvimTreeToggle<CR>", desc = "tree toggle" },
+  { "<leader>af", ":NvimTreeFocus<CR>", desc = "tree focus" },
+  { "<leader>ax", ":NvimTreeFindFile<CR>", desc = "tree find file" },
+  { "<leader>c", group = "comment" },
   { "<leader>f", group = "find" },
   { "<leader>fa", "<Cmd>lua require('telescope.builtin').oldfiles()<CR>", desc = "recent files" },
   { "<leader>fb", "<Cmd>Telescope buffers<CR>", desc = "buffers" },
