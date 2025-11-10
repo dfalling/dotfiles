@@ -51,37 +51,7 @@ require("lazy").setup({
       vim.o.timeoutlen = 300
     end,
     config = function()
-      local wk = require("which-key")
-      wk.setup({})
-      wk.add({
-        { "<leader>a", group = "files" },
-        { "<leader>ac", ':let @+ = expand("%")<CR>', desc = "copy path" },
-        { "<leader>c", group = "comment" },
-        { "<leader>ax", ":NvimTreeFindFile<CR>", desc = "explore" },
-        { "<leader>ad", ":call delete(expand('%')) | bdelete!", desc = "delete" },
-        { "<leader>f", group = "find" },
-        { "<leader>fa", "<Cmd>lua require('telescope.builtin').oldfiles()<CR>", desc = "recent files" },
-        { "<leader>fb", "<Cmd>Telescope buffers<CR>", desc = "buffers" },
-        { "<leader>fc", group = "commands" },
-        { "<leader>fcc", "<Cmd>Telescope commands<CR>", desc = "commands" },
-        { "<leader>fch", "<Cmd>Telescope command_history<CR>", desc = "history" },
-        { "<leader>fd", "<Cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>", desc = "directory browser" },
-        { "<leader>ff", "<Cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>", desc = "files" },
-        { "<leader>fg", "<Cmd>Telescope live_grep<CR>", desc = "file contents" },
-        { "<leader>fl", ":Telescope live_grep find_command=rg,--ignore,--hidden,--fixed-strings,--files<CR>", desc = "file contents (literal)" },
-        { "<leader>fh", "<Cmd>Telescope help_tags<CR>", desc = "help tags" },
-        { "<leader>fq", "<Cmd>Telescope quickfix<CR>", desc = "quickfix" },
-        { "<leader>fs", "<Cmd>Telescope search_history<CR>", desc = "search history" },
-        { "<leader>ft", "<Cmd>lua require('telescope.builtin').resume()<CR>", desc = "resume search" },
-        { "<leader>s", group = "whitespace" },
-        { "<leader>st", "<Cmd>call WhitespaceToggle()<CR>", desc = "toggle" },
-        { "<leader>t", group = "tab" },
-        { "<leader>td", "<Cmd>lua DuplicateWindow()<CR>", desc = "duplicate" },
-        { "<leader>w", ":w!<CR>", desc = "save file" },
-        { "<leader>x", group = "vim" },
-        { "<leader>xc", ":checkhealth<CR>", desc = "check health" },
-        { "<leader>xr", ":source $MYVIMRC<CR>", desc = "reload config" },
-      })
+      require("user.whichkey")
     end,
   },
 
