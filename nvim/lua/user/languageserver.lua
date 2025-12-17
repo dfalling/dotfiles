@@ -1,5 +1,30 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
+local configs = require('lspconfig.configs')
+
+-- Expert LSP for Elixir
+if not configs.expert then
+	configs.expert = {
+		default_config = {
+			cmd = { '/Users/dfalling/Code/expertls', '--stdio' },
+			filetypes = { 'elixir', 'eelixir', 'heex' },
+			root_dir = function(fname)
+				-- For umbrella projects, find the outermost mix.exs (the umbrella root)
+				local path = lspconfig.util.root_pattern('.git')(fname)
+					or lspconfig.util.root_pattern('mix.exs')(fname)
+					or vim.loop.cwd()
+				return path
+			end,
+			settings = {},
+			-- Use a clean shell to avoid zshrc noise on stderr
+			cmd_env = {
+				SHELL = '/bin/sh',
+			},
+		},
+	}
+end
+
+lspconfig.expert.setup({})
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
