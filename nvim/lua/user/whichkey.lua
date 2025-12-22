@@ -7,6 +7,7 @@ wk.add({
   { "<leader>ae", ":NvimTreeToggle<CR>", desc = "tree toggle" },
   { "<leader>af", ":NvimTreeFocus<CR>", desc = "tree focus" },
   { "<leader>ax", ":NvimTreeFindFile<CR>", desc = "tree find file" },
+  { "<leader>a?", "<cmd>echo 'Press g? in NvimTree for help'<CR>", desc = "tree help (press g?)" },
   { "<leader>c", group = "comment" },
   { "<leader>f", group = "find" },
   { "<leader>fa", "<Cmd>lua require('telescope.builtin').oldfiles()<CR>", desc = "recent files" },
