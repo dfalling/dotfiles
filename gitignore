@@ -6,3 +6,4 @@
 .elixir_ls
 .vim
 *.orig
+.claude
