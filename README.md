@@ -1,15 +1,6 @@
 ### Requirements
-- brew install tmux
-- brew install zplug
-- brew install ripgrep
-- brew install tldr
-- brew install direnv
-- brew install gnupg
-- brew install bat
-- brew install mise
-- brew install zoxide
+- brew install tmux zplug ripgrep tldr direnv gnupg bat mise zoxide chafa
 - brew install --HEAD neovim
-- brew install chafa
 - pip install neovim
 
 ### iTerm
@@ -25,12 +16,3 @@ https://github.com/junegunn/vim-plug
 
 ### Setup Script
 `bash setup.sh`
-
-### asdf
-
-```bash
-asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
-asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
-asdf plugin-add python
-```
