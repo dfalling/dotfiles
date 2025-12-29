@@ -6,10 +6,10 @@
 - brew install direnv
 - brew install gnupg
 - brew install bat
-- brew install asdf
+- brew install mise
 - brew install zoxide
-- brew install swiftdefaultappsprefpane
 - brew install --HEAD neovim
+- brew install chafa
 - pip install neovim
 
 ### iTerm

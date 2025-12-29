@@ -20,6 +20,7 @@ wk.add({
   { "<leader>fg", "<Cmd>Telescope live_grep<CR>", desc = "file contents" },
   { "<leader>fl", ":Telescope live_grep find_command=rg,--ignore,--hidden,--fixed-strings,--files<CR>", desc = "file contents (literal)" },
   { "<leader>fh", "<Cmd>Telescope help_tags<CR>", desc = "help tags" },
+  { "<leader>fi", "<Cmd>Telescope media_files<CR>", desc = "images/media" },
   { "<leader>fq", "<Cmd>Telescope quickfix<CR>", desc = "quickfix" },
   { "<leader>fs", "<Cmd>Telescope search_history<CR>", desc = "search history" },
   { "<leader>ft", "<Cmd>lua require('telescope.builtin').resume()<CR>", desc = "resume search" },
