@@ -111,7 +111,10 @@ require("lazy").setup({
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-file-browser.nvim'
-    }
+    },
+    config = function()
+      require("user.telescope")
+    end,
   },
 
   -- indentation based movements: move to different / same indention levels
