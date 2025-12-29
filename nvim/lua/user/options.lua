@@ -53,6 +53,12 @@ vim.opt.undodir = { prefix .. "/nvim/.undo//" }
 vim.opt.backupdir = { prefix .. "/nvim/.backup//" }
 vim.opt.directory = { prefix .. "/nvim/.swp//" }
 
+-- disable mouse to avoid interfering with tmux
+vim.opt.mouse = ""
+
+-- remove blank line under statusline
+vim.opt.cmdheight = 0
+
 -- nerdcommenter
 vim.cmd([[
   let g:NERDSpaceDelims = 1

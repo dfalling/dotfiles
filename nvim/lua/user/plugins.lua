@@ -160,4 +160,16 @@ require("lazy").setup({
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
   },
+
+  -- UI library for noice
+  { "MunifTanjim/nui.nvim" },
+
+  -- centered floating command line
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    }
+  },
 })
