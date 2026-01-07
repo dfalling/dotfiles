@@ -4,6 +4,29 @@ function DuplicateWindow()
 	vim.cmd("wincmd T")
 end
 
+-- function to properly reload config by clearing Lua module cache
+function ReloadConfig()
+	-- Clear all user.* modules from cache (except plugins to avoid lazy.nvim re-init)
+	for name, _ in pairs(package.loaded) do
+		if name:match("^user") and name ~= "user.plugins" then
+			package.loaded[name] = nil
+		end
+	end
+
+	-- Find and reload all user modules based on init.lua order
+	local user_path = vim.fn.stdpath("config") .. "/lua/user"
+	local init_content = vim.fn.readfile(vim.fn.stdpath("config") .. "/init.lua")
+
+	for _, line in ipairs(init_content) do
+		local module = line:match('require%s+"(user%.%w+)"')
+		if module and module ~= "user.plugins" then
+			require(module)
+		end
+	end
+
+	print("Config reloaded!")
+end
+
 vim.cmd([[
     " o/O                   Start insert mode with [count] blank lines.
     "                       The default behavior repeats the insertion [count]

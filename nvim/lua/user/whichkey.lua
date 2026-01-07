@@ -33,5 +33,5 @@ wk.add({
   { "<leader>w", ":w!<CR>", desc = "save file" },
   { "<leader>x", group = "vim" },
   { "<leader>xc", ":checkhealth<CR>", desc = "check health" },
-  { "<leader>xr", ":source $MYVIMRC<CR>", desc = "reload config" },
+  { "<leader>xr", ":lua ReloadConfig()<CR>", desc = "reload config" },
 })
