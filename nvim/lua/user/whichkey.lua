@@ -24,6 +24,8 @@ wk.add({
   { "<leader>fq", "<Cmd>Telescope quickfix<CR>", desc = "quickfix" },
   { "<leader>fs", "<Cmd>Telescope search_history<CR>", desc = "search history" },
   { "<leader>ft", "<Cmd>lua require('telescope.builtin').resume()<CR>", desc = "resume search" },
+  { "<leader>g", group = "git" },
+  { "<leader>gs", "<Cmd>Telescope git_status<CR>", desc = "status" },
   { "<leader>s", group = "whitespace" },
   { "<leader>st", "<Cmd>call WhitespaceToggle()<CR>", desc = "toggle" },
   { "<leader>t", group = "tab" },
