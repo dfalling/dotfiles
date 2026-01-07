@@ -59,6 +59,7 @@ local custom_previewer = previewers.new_termopen_previewer({
 
 telescope.setup({
   defaults = {
+    file_ignore_patterns = { "^.git/" },
     file_previewer = function() return custom_previewer end,
     mappings = {
       i = {
