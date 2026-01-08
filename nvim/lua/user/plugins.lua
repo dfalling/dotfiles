@@ -165,6 +165,14 @@ require("lazy").setup({
     dependencies = { 'kyazdani42/nvim-web-devicons' },
   },
 
+  -- git signs
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require('gitsigns').setup()
+    end
+  },
+
   -- UI library for noice
   { "MunifTanjim/nui.nvim" },
 
