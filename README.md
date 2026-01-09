@@ -8,7 +8,6 @@
 
 ### Manual
 - scm breeze: `https://github.com/scmbreeze/scm_breeze#installation`
-- iTerm colors: `https://iterm2colorschemes.com/`
 - Nerd Fonts: `https://www.nerdfonts.com/`
 
 ### vim-plug
