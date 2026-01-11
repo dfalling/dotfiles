@@ -40,3 +40,5 @@
 # resize-overlay-duration = 4s 200ms
 
 theme = light:"Atom One Light",dark:"Atom One Dark"
+
+macos-titlebar-style = hidden
