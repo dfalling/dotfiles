@@ -4,6 +4,19 @@ function DuplicateWindow()
 	vim.cmd("wincmd T")
 end
 
+-- function to copy git-relative path to clipboard
+function CopyGitRelativePath()
+	local file_path = vim.fn.expand("%:p")
+	local git_root = vim.fn.systemlist("git -C " .. vim.fn.shellescape(vim.fn.expand("%:p:h")) .. " rev-parse --show-toplevel")[1]
+	if git_root and vim.v.shell_error == 0 then
+		local relative_path = file_path:sub(#git_root + 2)
+		vim.fn.setreg("+", relative_path)
+		print("Copied: " .. relative_path)
+	else
+		print("Not in a git repository")
+	end
+end
+
 -- function to properly reload config by clearing Lua module cache
 function ReloadConfig()
 	-- Clear all user.* modules from cache (except plugins to avoid lazy.nvim re-init)

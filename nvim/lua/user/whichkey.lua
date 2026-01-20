@@ -3,6 +3,7 @@ wk.setup({})
 wk.add({
   { "<leader>a", group = "files" },
   { "<leader>ac", ':let @+ = expand("%")<CR>', desc = "copy path" },
+  { "<leader>ag", ":lua CopyGitRelativePath()<CR>", desc = "copy git-relative path" },
   { "<leader>ad", ":call delete(expand('%')) | bdelete!", desc = "delete" },
   { "<leader>ae", ":NvimTreeToggle<CR>", desc = "tree toggle" },
   { "<leader>af", ":NvimTreeFocus<CR>", desc = "tree focus" },
